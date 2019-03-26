@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.2]
       t.string :last_name
       t.string :home_city
       t.string :home_country
-      t.timsetamps
+      t.timestamps
     end
   end
 end
