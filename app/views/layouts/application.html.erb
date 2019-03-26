@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsProject</title>
+    <title>Rails Project</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+
+  <header>
+    <a class="logo" href="">Wanderu</a>
+    <nav>
+      <a href="">Browse</a>
+      <a href="">Library</a>
+      <a href="">Profile</a>
+      <a href="">Log Out</a>
+    </nav>
+
+  </header>
 
   <body>
     <%= yield %>

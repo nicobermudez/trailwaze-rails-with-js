@@ -13,3 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+ /* import font Barlow  */
+ @import url('https://fonts.googleapis.com/css?family=Barlow');
+
+body {
+  font-family: 'Barlow', sans-serif;
+  font-size: 16px;
+  color: #000;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+header {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 0.1px solid #101D42;
+  overflow: hidden;
+  display: fixed;
+}
+nav {
+  float: right;
+  vertical-align: middle;
+  margin-top: 3px;
+}
+nav a {
+  margin-right: 20px;
+  vertical-align: bottom;
+
+}
+.logo {
+  float: left;
+  font-size: 24px;
+  font-weight: 700;
+  padding-left: 20px;
+}
