@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :current_user
-  before_action :require_log_in, except: [:home]
+  before_action :require_log_in, except: [:new, :create, :home]
 
   # security check - method to check if user is logged in
   def logged_in?

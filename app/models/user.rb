@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 
-  # bcrypt helper 
+  # bcrypt helper
   has_secure_password
 
   # model relationships
@@ -19,6 +19,6 @@ class User < ApplicationRecord
 
   validates :username, uniqueness: true
   validates :email, uniqueness: true
-  validates :password, :length: {minimum: 6}
+  validates :password, length: { minimum: 6 }
 
 end
