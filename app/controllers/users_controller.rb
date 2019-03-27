@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   layout "user"
-  # before_action :
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -15,6 +15,19 @@ class UsersController < ApplicationController
         format.html { redirect_to user_path(@user), notice: "Welcome Home!" }
       else
         format.html { render :new }
+      end
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to user_path(@user), notice: 'User was successfully updated.' }
+      else
+        format.html { render :edit }
       end
     end
   end

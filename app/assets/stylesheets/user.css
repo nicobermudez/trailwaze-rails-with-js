@@ -142,3 +142,39 @@ footer {
 .feature img {
   width: 200px;
 }
+h4 {
+  font-size: 20px;
+}
+
+/* Edit / Profile Page */
+.profile {
+  display: flex;
+  justify-content: center;
+}
+.profile-information {
+  margin: 40px;
+}
+.form-group {
+  margin-top: 20px;
+}
+.profile-image {
+  position: relative;
+  margin-left: 40px;
+  margin-top: 100px;
+  padding-right: 100px;
+  border-right: 0.5px solid #000;
+}
+.profile-image a {
+  position: absolute;
+  left: 23%;
+  padding: 15px;
+}
+.profile-image img{
+  width: 200px;
+}
+.profile-information .form-group input{
+  width: 520px;
+}
+.profile-information .actions {
+  text-align: center;
+}
