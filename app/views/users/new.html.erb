@@ -1,1 +1,27 @@
-<%= render 'form' %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rails Project</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <header>
+    <a class="logo" href="">Wanderu</a>
+    <nav>
+      <a href=<%= login_path %>>Log In</a>
+      <a href=<%= new_user_path %> >Sign Up</a>
+    </nav>
+  </header>
+
+  <body>
+    <section class="form">
+      <h3> Sign up for an account </h3>
+      <p>Explore travel plans and earn money off of yours!</p>
+      <%= render 'form' %>
+    </section>
+  </body>
+</html>

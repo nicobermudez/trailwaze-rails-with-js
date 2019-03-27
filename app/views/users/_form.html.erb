@@ -1,57 +1,44 @@
-<%= form_for @user do |f| %>
 
-    <% if @user.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
-        </h2>
+  <%= form_for @user do |f| %>
 
-        <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-        </ul>
+      <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
+          </h2>
+
+          <ul>
+          <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <!-- OAuth -->
+
+      <p> or </p>
+
+      <div class="form-group">
+        <%= f.text_field :username, class: "form-control", placeholder: "Username"  %>
       </div>
-    <% end %>
+      <div class="form-group">
+        <%= f.text_field :first_name, class: "form-control", placeholder: "First Name"  %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name"  %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :email, class: "form-control", placeholder: "Email"  %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+      </div>
 
-    <div class="form-group">
-      <%= f.label :username %>
-      <br>
-      <%= f.text_field :username, class: "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :first_name %>
-      <br>
-      <%= f.text_field :first_name, class: "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :last_name %>
-      <br>
-      <%= f.text_field :last_name, class: "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :email, "Email address" %>
-      <br>
-      <%= f.text_field :email, class: "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :password %>
-      <br>
-      <%= f.password_field :password, class: "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :home_city %>
-      <br>
-      <%= f.text_field :home_city, class: "form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :home_country %>
-      <br>
-      <%= f.text_field :home_country, class: "form-control" %>
-    </div>
+      <div class="actions">
+        <%= f.submit class: "btn btn-primary" %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit class: "btn btn-primary" %>
-    </div>
+      <p>Have an account? <a href=<%= login_path %>>Log in</a></p>
 
   <% end %>
