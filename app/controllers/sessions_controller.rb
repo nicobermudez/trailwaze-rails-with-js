@@ -1,8 +1,10 @@
 class SessionsController < ApplicationController
 
+  layout "user"
+
   # logout
   def destroy
-    session[:user_id].clear
+    session.clear
     redirect_to root_url
   end
 
@@ -21,4 +23,5 @@ class SessionsController < ApplicationController
     else
       redirect_to root_path
     end
+  end
 end

@@ -8,7 +8,7 @@ body {
  color: #000;
  margin: 0;
  height: 100vh;
- background-color: #CAE5FF;
+ background-color: rgb(228, 230, 233);
 }
 a {
  text-decoration: none;
@@ -31,7 +31,9 @@ nav {
 nav a {
  margin-right: 20px;
  vertical-align: bottom;
-
+}
+nav a:active {
+  border-bottom: 1px solid #EC6A5C;
 }
 .logo {
  float: left;
@@ -41,12 +43,21 @@ nav a {
 }
 h3 {
   text-align: center;
-  margin: 40px;
+  margin: 0 40px 40px 40px;
+  font-weight: 700;
+}
+footer {
+  font-size: 12px;
+  position: absolute;
+  background-color: #fff;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  bottom: 0;
+  border-top: 0.1px solid #101D42;
 }
 
-section {
-  background-color: #fff;
-}
+/* Login / Signup */
 .form{
   text-align: center;
   color: #000;
@@ -60,7 +71,7 @@ section {
   border-radius: 15px;
 }
 .form p {
-  width: 200px;
+  width: 220px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -83,4 +94,51 @@ section {
 }
 .form a {
   color: #EC6A5C;
+}
+
+/* Show Page */
+.search-bar {
+  display: flex;
+  padding: 16px;
+  box-shadow: rgba(25, 50, 100, 0.25) 0px 10px 50px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  border-radius: 20px;
+}
+.search-bar img {
+  width: 24px;
+  height: 24px;
+}
+.search-input {
+  margin-left: 5px;
+  width: 60%;
+  padding: 5px;
+  border: 0px solid;
+  background-color: #fff;
+}
+.search-input:focus {
+  outline: 0;
+}
+.show-page h3, .featured h3 {
+  font-size: 40px;
+  font-weight: 700;
+}
+.show-page {
+  margin: 40px;
+}
+.featured {
+  margin-top: 100px;
+  text-align: center;
+}
+.feature {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+  width: 300px;
+  text-align: center;
+}
+.feature img {
+  width: 200px;
 }

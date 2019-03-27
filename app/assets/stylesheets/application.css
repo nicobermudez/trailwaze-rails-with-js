@@ -48,7 +48,9 @@ nav {
 nav a {
   margin-right: 20px;
   vertical-align: bottom;
-
+}
+nav a:active {
+  border-bottom: 0.5px solid #EC6A5C;
 }
 .logo {
   float: left;
@@ -78,11 +80,21 @@ nav a {
 }
 .search-input {
   margin-left: 5px;
-  width: 400px;
+  width: 60%;
   padding: 5px;
   border: 0px solid;
   background-color: #fff;
 }
 .search-input:focus {
   outline: 0;
+}
+footer {
+  font-size: 12px;
+  position: absolute;
+  background-color: #fff;
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  bottom: 0;
+  border-top: 0.1px solid #101D42;
 }
