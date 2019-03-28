@@ -96,11 +96,27 @@ footer {
   margin-top: 20px;
   color: #fff;
 }
+.button {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background-color: #EC6A5C;
+  width:290px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+a.btn-primary {
+  padding: 15px 105px;
+}
 .form a {
   color: #EC6A5C;
 }
 
-/* Show Page */
+/* Browse Page */
 .search-bar {
   display: flex;
   padding: 16px;
@@ -150,26 +166,18 @@ footer {
 h4 {
   font-size: 20px;
 }
+
+/* Show Page */
 .show-page p {
   text-align: center;
 }
-.button {
-  width: 100%;
-  text-align: center;
-  padding: 15px;
-  background-color: #EC6A5C;
-  width:290px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 4px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #fff;
+.buttons {
+  margin-top: 40px;
 }
-a.btn-primary {
-  padding: 15px 105px;
+.buttons .btn-primary {
+  margin: 10px;
+  padding: 15px 60px;
 }
-
 .my-itineraries {
   padding-bottom: 40px;
   margin-bottom: 40px;

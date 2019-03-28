@@ -13,7 +13,10 @@
             <h4><%= itinerary.title %></h4>
             <h4><%= itinerary.description %></h4>
             <h4>Budget: $<%= itinerary.budget %></h4>
-            <div class="edit-button"> <a class= "btn-primary" href="<%= edit_itinerary_path %>">Edit</a></div>
+            <div class="buttons">
+              <a class= "btn-primary" href="<%= edit_itinerary_path %>">View</a>
+              <a class= "btn-primary" href="<%= edit_itinerary_path %>">Edit</a>
+            </div>
           </div>
         <% end %>
         <div class="button"> <a class= "btn-primary" href="<%= new_itinerary_path %>">Create New</a></div>
