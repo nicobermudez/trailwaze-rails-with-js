@@ -7,9 +7,11 @@ body {
  font-size: 16px;
  color: #000;
  margin: 0;
- height: 100vh;
  background-color: rgb(228, 230, 233);
+ position: relative;
+ min-height: 100vh;
 }
+
 a {
  text-decoration: none;
  color: #000;
@@ -48,13 +50,14 @@ h3 {
 }
 footer {
   font-size: 12px;
-  position: absolute;
   background-color: #fff;
   text-align: center;
   padding: 15px;
   width: 100%;
-  bottom: 0;
+  height: 40px;
   border-top: 0.1px solid #101D42;
+  position: absolute;
+  bottom: 0;
 }
 
 /* Login / Signup */
@@ -127,7 +130,7 @@ footer {
   font-weight: 700;
 }
 .show-page {
-  margin: 40px;
+  padding: 40px;
 }
 .featured {
   margin-top: 100px;
@@ -152,11 +155,36 @@ h4 {
 .button {
   width: 100%;
   text-align: center;
+  padding: 15px;
+  background-color: #EC6A5C;
+  width:290px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
 }
+a.btn-primary {
+  padding: 15px 105px;
+}
+
 .my-itineraries {
   padding-bottom: 40px;
   margin-bottom: 40px;
   border-bottom: 1px solid #000;
+  text-align: center;
+}
+.itinerary {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+.itinerary img {
+  width: 200px;
+}
+.my-itineraries .button {
+  margin-top: 120px;
 }
 
 /* Edit / Profile Page */
@@ -190,4 +218,10 @@ h4 {
 }
 .profile-information .actions {
   text-align: center;
+}
+
+/* New Itinerary */
+.new-itinerary {
+  text-align: center;
+  margin-top: 100px;
 }

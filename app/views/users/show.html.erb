@@ -1,20 +1,26 @@
 <div class="show-page">
   <h3> My Itineraries</h3>
-    <% if @user.itineraries %>
+    <% if !@user.itineraries %>
       <section class="my-itineraries">
         <p>You currently haven't created any itineraries</p>
-        <div class="button"><a class= "btn-primary" href="<%= new_itinerary_path %>">Create New</a></div>
+        <div class="button"> <a class= "btn-primary" href="<%= new_itinerary_path %>">Create New</a></div>
       </section>
     <% else %>
       <section class="my-itineraries">
-      <%= @user.itineraries.each do |itinerary| %>
-        <div class="itinerary">
-
-        </div>
-      <% end %>
+        <% @user.itineraries.each do |itinerary| %>
+          <div class="itinerary">
+            <img src="<%= asset_path("airplane-img.jpg")%>">
+            <h4><%= itinerary.title %></h4>
+            <h4><%= itinerary.description %></h4>
+            <h4>Budget: $<%= itinerary.budget %></h4>
+            <div class="edit-button"> <a class= "btn-primary" href="<%= edit_itinerary_path %>">Edit</a></div>
+          </div>
+        <% end %>
+        <div class="button"> <a class= "btn-primary" href="<%= new_itinerary_path %>">Create New</a></div>
       </section>
     <% end %>
 
   <h3> My Library </h3>
     <!-- Liked Itineraries -->
+
 </div>
