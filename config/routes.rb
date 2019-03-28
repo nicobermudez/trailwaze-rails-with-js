@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   # post '/sessions/create', to :'sessions#create'
   resources :users
+  resources :itineraries
 end

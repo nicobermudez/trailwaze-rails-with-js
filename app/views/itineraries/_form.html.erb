@@ -1,0 +1,10 @@
+<%= form_for(@itinerary) do |f| %>
+
+  <div class="form-group">
+    <%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

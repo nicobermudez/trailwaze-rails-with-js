@@ -1,34 +1,20 @@
-<section class="show-page">
-    <h3>Explore</h3>
-  <div class="search-bar">
-    <img src="<%= asset_path('search-icon.png') %>">
-      <input class="search-input" placeholder="Try 'Bali'">
-  </div>
-</section>
+<div class="show-page">
+  <h3> My Itineraries</h3>
+    <% if @user.itineraries %>
+      <section class="my-itineraries">
+        <p>You currently haven't created any itineraries</p>
+        <div class="button"><a class= "btn-primary" href="<%= new_itinerary_path %>">Create New</a></div>
+      </section>
+    <% else %>
+      <section class="my-itineraries">
+      <%= @user.itineraries.each do |itinerary| %>
+        <div class="itinerary">
 
+        </div>
+      <% end %>
+      </section>
+    <% end %>
 
-<!-- Feature actual user Itineraries -->
-<section class="featured">
-  <h3>Featured</h3>
-  <a href="">
-    <div class="feature">
-      <img src= "<%= asset_path('fabrizio-verrecchia-195644-unsplash.jpg')%>">
-      <h4>Paris</h4>
-      <p>5 Nights in Paris - Couples Edition</p>
-    </div>
-  </a>
-  <a href="">
-    <div class="feature">
-      <img src= "<%= asset_path('nicolas-j-leclercq-715304-unsplash.jpg')%>">
-      <h4>Iceland</h4>
-      <p>8 Nights in Iceland - Adventurer's Only</p>
-    </div>
-  </a>
-  <a href="">
-    <div class="feature">
-      <img src= "<%= asset_path('don-fontijn-1311551-unsplash.jpg')%>">
-      <h4>Marrakech</h4>
-      <p>3 Nights in the Marrakech</p>
-    </div>
-  </a>
-</section>
+  <h3> My Library </h3>
+    <!-- Liked Itineraries -->
+</div>
