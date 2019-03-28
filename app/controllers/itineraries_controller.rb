@@ -3,6 +3,10 @@ class ItinerariesController < ApplicationController
   before_action :set_itinerary, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user, only: [:new, :show, :edit, :update, :destroy]
 
+  def index
+    @user = current_user
+  end
+
   def show
   end
 
@@ -31,7 +35,6 @@ class ItinerariesController < ApplicationController
   end
 
   def authenticate_user
-
     set_itinerary
     if @itinerary.user != current_user
       redirect_to user_path(current_user)
