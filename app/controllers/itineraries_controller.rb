@@ -1,7 +1,7 @@
 class ItinerariesController < ApplicationController
   layout "user"
   before_action :set_itinerary, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user, only: [:new, :show, :edit, :update, :destroy]
+  before_action :authenticate_user, only: [:show, :edit, :update, :destroy]
 
   def index
     @user = current_user
@@ -11,6 +11,7 @@ class ItinerariesController < ApplicationController
   end
 
   def new
+    @user = current_user
     @itinerary = Itinerary.new
     @itinerary.user_id = params[:user_id]
   end
