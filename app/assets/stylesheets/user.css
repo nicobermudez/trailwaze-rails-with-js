@@ -11,6 +11,7 @@ body {
  color: #000;
  margin: 0;
  background-color: rgb(228, 230, 233);
+ margin-top: 80px;
 }
 a {
  text-decoration: none;
@@ -66,7 +67,7 @@ footer {
 .form{
   text-align: center;
   color: #000;
-  padding-top: 20px;
+  padding-top: 80px;
   padding-bottom: 60px;
   margin: 120px auto;
   text-align: center;
@@ -74,28 +75,20 @@ footer {
   border-radius: 15px;
   background-color: #fff;
 }
-.omniauth {
-  width: 200px;
-  height: 50px;
-  text-align: center;
-  padding-bottom: 50px;
-}
-.omniauth a {
-  position: relative;
-  width: 200px;
-  height: 50px;
-  display: block;
-}
 .omniauth img {
-  position: absolute;
-  width: 200px;
+  width: 290px;
 }
+
 .form p {
   width: 220px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   padding: 5px;
+  font-size: 14px;
+}
+.form h3 {
+  font-size: 24px;
 }
 .form-group input {
   border: 0.5px solid #0A2239;
@@ -110,6 +103,7 @@ footer {
   border-radius: 4px;
   background-color: #EC6A5C;
   margin-top: 20px;
+  margin-bottom: 20px;
   color: #fff;
 }
 .button {
@@ -131,7 +125,23 @@ a.btn-primary {
 .form a {
   color: #EC6A5C;
 }
+.or-container {
+  display: flex;
+  align-content: stretch;
+  flex-direction: row;
+  margin: 15px auto;
+  width: 290px;
+}
+.bar-icon {
+  border-top: 1px solid #bbb;
+  width: 100%;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+.or-p {
+  padding: 0 20px;
 
+}
 /* Browse Page */
 .search-bar {
   display: flex;
