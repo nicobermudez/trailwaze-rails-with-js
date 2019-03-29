@@ -1,22 +1,23 @@
 
 /* import font Barlow  */
 @import url('https://fonts.googleapis.com/css?family=Barlow');
-
+html {
+  position: relative;
+  min-height: 100vh;
+}
 body {
  font-family: 'Barlow', sans-serif;
  font-size: 16px;
  color: #000;
  margin: 0;
  background-color: rgb(228, 230, 233);
- position: relative;
- min-height: 100vh;
 }
-
 a {
  text-decoration: none;
  color: #000;
 }
 header {
+ top: 0;
  width: 100%;
  padding-top: 20px;
  padding-bottom: 20px;
@@ -24,6 +25,7 @@ header {
  overflow: hidden;
  display: fixed;
  background-color: #fff;
+ position: fixed;
 }
 nav {
  float: right;
@@ -64,15 +66,29 @@ footer {
 .form{
   text-align: center;
   color: #000;
-  margin-top: 40px;
   padding-top: 20px;
   padding-bottom: 60px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 120px auto;
   text-align: center;
   width: 400px;
   border-radius: 15px;
   background-color: #fff;
+}
+.omniauth {
+  width: 200px;
+  height: 50px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.omniauth a {
+  position: relative;
+  width: 200px;
+  height: 50px;
+  display: block;
+}
+.omniauth img {
+  position: absolute;
+  width: 200px;
 }
 .form p {
   width: 220px;

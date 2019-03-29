@@ -21,10 +21,6 @@
     <section class="form">
       <h3>Log in</h3>
 
-      <%= link_to('Log in with Facebook', '/auth/facebook') %>
-
-      <!-- OAuth or -->
-
       <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
 
           <div class="form-group">
@@ -39,6 +35,15 @@
             <%= f.submit class: "btn btn-primary", value: "Log in" %>
           </div>
       <% end %>
+
+      <!-- OAuth or -->
+      <p>  or  </p>
+
+      <div class="omniauth">
+        <a href="/auth/facebook"><img src="<%= asset_path("facebook-login.png") %>"></a>
+        <a href="/auth/google"><img src="<%= asset_path("google-login.png") %>"></a>
+      </div>
+      
       <p>Don't have an account? <a href=<%= new_user_path %>>Sign up</a></p>
     </section>
     <footer>

@@ -22,6 +22,13 @@
       <h3> Sign up for an account </h3>
       <p>Explore travel plans and earn money off of yours!</p>
       <%= render 'form' %>
+      <!-- OAuth or -->
+      <p>  or  </p>
+
+      <div class="omniauth">
+        <a href="/auth/facebook"><img src="<%= asset_path("facebook-login.png") %>"></a>
+        <a href="/auth/google"><img src="<%= asset_path("google-login.png") %>"></a>
+      </div>
       <p>Have an account? <a href=<%= login_path %>>Log in</a></p>
     </section>
     <footer>
