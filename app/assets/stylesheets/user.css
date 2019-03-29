@@ -234,3 +234,13 @@ h4 {
   text-align: center;
   margin-top: 100px;
 }
+.new-itinerary .itinerary-form {
+  text-align: left;
+  margin-left: 40px;
+}
+.new-itinerary input{
+  width: 60%;
+}
+.new-itinerary .actions {
+  width: 290px;
+}
