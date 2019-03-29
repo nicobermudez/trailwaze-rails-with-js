@@ -5,10 +5,17 @@ class DestinationsController < ApplicationController
   def index
     @user = current_user
     @destination = Destination.new
-    @destination.itinerary_id = params[:itinerary_id]
+    @itinerary = Itinerary.find_by(id: params[:format])
+
   end
 
   def new
+  end
+
+  def create
+    @destination = Destination.new(destination_params)
+    @destination.itinerary_id = @itinerary.id
+
   end
 
   def show
@@ -22,7 +29,7 @@ class DestinationsController < ApplicationController
 
 
   def destination_params
-    params.require(:itinerary).permit(
+    params.require(:destination).permit(
       :city,
       :country,
       :accommodation,

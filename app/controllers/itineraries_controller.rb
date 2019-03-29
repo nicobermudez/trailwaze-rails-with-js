@@ -31,10 +31,6 @@ class ItinerariesController < ApplicationController
 
   private
 
-  def set_itinerary
-    @itinerary = Itinerary.find(params[:id])
-  end
-
   def authenticate_user
     set_itinerary
     if @itinerary.user != current_user
@@ -50,7 +46,7 @@ class ItinerariesController < ApplicationController
       :description,
       :budget,
       :departing_city,
-      :deaprting_country
+      :departing_country
     )
   end
 end
