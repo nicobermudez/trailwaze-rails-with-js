@@ -9,10 +9,11 @@
       <section class="my-itineraries">
         <% @user.itineraries.each do |itinerary| %>
           <div class="itinerary">
-            <img src="<%= asset_path("airplane-img.jpg")%>">
             <h4><%= itinerary.title %></h4>
-            <h4><%= itinerary.description %></h4>
-            <h4>Budget: $<%= itinerary.budget %></h4>
+            <img src="<%= asset_path("airplane-img.jpg")%>">
+
+            <p><%= itinerary.description %></p>
+            <p>Budget: $<%= itinerary.budget %></p>
             <div class="buttons">
               <a class= "btn-primary" href="<%= itinerary_path(itinerary) %>">View</a>
               <a class= "btn-primary" href="<%= edit_itinerary_path %>">Edit</a>
