@@ -17,12 +17,33 @@ class SessionsController < ApplicationController
 
   # call to db to create new user
   def create
-    @user = User.find_by(username: params[:user][:username])
-    if @user && @user.authenticate(params[:user][:password])
-      session[:user_id] = @user.id
-      redirect_to user_path(@user), notice: "Welcome Home!"
+    if auth
+      #Log in via omniauth
+      if @user = User.find_by(email: auth["info"]["email"])
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
+      else
+        redirect_to new_user_path
+        # message
+      end
+
     else
-      redirect_to root_path
+      # Manual Log in
+      @user = User.find_by(username: params[:user][:username])
+      if @user && @user.authenticate(params[:user][:password])
+        session[:user_id] = @user.id
+        redirect_to user_path(@user)
+      else
+        redirect_to new_user_path
+        # message
+      end
     end
   end
+
+  private
+
+  def auth
+    request.env['omniauth.auth']
+  end
+
 end
