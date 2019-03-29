@@ -1,7 +1,7 @@
 class ItinerariesController < ApplicationController
   layout "user"
   before_action :set_itinerary, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, only: [:index, :show, :edit, :update, :destroy]
 
   def index
     @user = current_user
@@ -20,7 +20,7 @@ class ItinerariesController < ApplicationController
     @itinerary = Itinerary.new(itinerary_params)
     @itinerary.user_id = current_user.id
     if @itinerary.save
-      redirect_to user_path(current_user)
+      redirect_to destinations_path(@itinerary)
     else
       render :new
     end

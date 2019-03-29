@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback', to: 'sessions#create'
   resources :users
   resources :itineraries
+  resources :destinations
 end

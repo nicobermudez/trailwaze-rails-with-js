@@ -1,0 +1,13 @@
+<%= form_for @destination do |f| %>
+  <section class="destinations-form">
+    <div class="form-group">
+      <%= f.text_field :city, class: "form-control", placeholder: "City" %>
+    </div>
+    <div class="form-group">
+      <%= f.text_field :country, class: "form-control", placeholder: "Country" %>
+    </div>
+    <div class="actions">
+      <%= f.submit class: "btn btn-primary" %>
+    </div>
+  </section>
+<% end %>
