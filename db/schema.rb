@@ -15,22 +15,15 @@ ActiveRecord::Schema.define(version: 2019_03_26_161339) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "accommodations", force: :cascade do |t|
-    t.bigint "destination_id"
-    t.string "name"
-    t.string "address"
-    t.datetime "check_in_date"
-    t.datetime "check_out_date"
-    t.integer "price_per_night"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["destination_id"], name: "index_accommodations_on_destination_id"
-  end
-
   create_table "destinations", force: :cascade do |t|
     t.bigint "itinerary_id"
     t.string "city"
     t.string "country"
+    t.datetime "check_in_date"
+    t.datetime "check_out_date"
+    t.integer "price_per_night"
+    t.integer "total_price"
+    t.string "accommodation_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["itinerary_id"], name: "index_destinations_on_itinerary_id"
@@ -78,7 +71,6 @@ ActiveRecord::Schema.define(version: 2019_03_26_161339) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "accommodations", "destinations"
   add_foreign_key "destinations", "itineraries"
   add_foreign_key "experiences", "destinations"
   add_foreign_key "itineraries", "users"

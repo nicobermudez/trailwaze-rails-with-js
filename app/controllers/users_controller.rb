@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   layout "user"
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -9,14 +8,16 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    respond_to do |format|
-      if @user.save
-        session[:user_id] = @user.id
-        format.html { redirect_to user_path(@user), notice: "Welcome Home!" }
-      else
-        format.html { render :new }
-      end
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+    else
+      render :new
     end
+  end
+
+  def show
+    @user = current_user
   end
 
   def edit
@@ -34,8 +35,8 @@ class UsersController < ApplicationController
 
   private
 
-  def set_user
-    @user = User.find(params[:id])
+  def auth
+    request.env['omniauth.auth']
   end
 
   def user_params

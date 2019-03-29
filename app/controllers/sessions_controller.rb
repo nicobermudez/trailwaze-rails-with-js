@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-
   layout "user"
 
   # logout
@@ -19,14 +18,9 @@ class SessionsController < ApplicationController
   def create
     if auth
       #Log in via omniauth
-      if @user = User.find_by(email: auth["info"]["email"])
-        session[:user_id] = @user.id
-        redirect_to user_path(@user)
-      else
-        redirect_to new_user_path
-        # message
-      end
-
+      @user = User.find_or_create_by_omniauth(auth)
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
       # Manual Log in
       @user = User.find_by(username: params[:user][:username])
