@@ -1,6 +1,6 @@
 class Itinerary < ApplicationRecord
   belongs_to :user
-  has_many :reviews, through: :users
+  has_many :reviews, dependent: :destroy
   # has_many :destinations
   # has_many :experiences, through: :destinations
   # has_many :accommodations, through: :destinations

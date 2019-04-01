@@ -1,0 +1,22 @@
+<section class="browse">
+  <h3>Browse</h3>
+  <div class="search-bar">
+    <img src="<%= asset_path('search-icon.png') %>">
+      <input class="search-input" placeholder="Try 'Bali'">
+  </div>
+
+  <% if Itinerary.all.empty? %>
+    <h3>Empty Feed</h3>
+  <% else %>
+    <% sorted_itineraries = Itinerary.all %><%# .sort_by {|itinerary| itinerary[:total_reviews]}  %>
+      <% sorted_itineraries.each do |itinerary| %>
+        <div class="itinerary">
+          <h4><%= itinerary.title %></h4>
+          <img src="<%= asset_path("airplane-img.jpg")%>">
+          <p><%= itinerary.description %></p>
+          <p>Budget: $<%= itinerary.budget %></p>
+            <%= button_to [itinerary.reviews.count], itinerary_reviews_path(itinerary), method: :post%>
+        </div>
+      <% end %>
+  <% end %>
+</section>

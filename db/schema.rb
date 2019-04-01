@@ -52,10 +52,15 @@ ActiveRecord::Schema.define(version: 2019_04_01_171237) do
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "itinerary_id"
+    t.string "title"
     t.integer "rating"
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["itinerary_id"], name: "index_reviews_on_itinerary_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "transportations", force: :cascade do |t|
@@ -81,4 +86,6 @@ ActiveRecord::Schema.define(version: 2019_04_01_171237) do
   add_foreign_key "destinations", "itineraries"
   add_foreign_key "experiences", "destinations"
   add_foreign_key "itineraries", "users"
+  add_foreign_key "reviews", "itineraries"
+  add_foreign_key "reviews", "users"
 end
