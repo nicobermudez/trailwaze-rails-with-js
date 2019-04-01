@@ -8,6 +8,9 @@ gem 'pry'
 # security, password encryption
 gem 'bcrypt'
 
+# gem for error messages
+gem 'rack-flash3'
+
 # omniauth gems
 gem 'dotenv-rails'
 gem 'omniauth'

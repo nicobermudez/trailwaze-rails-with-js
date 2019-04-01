@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  use Rack::Flash
   layout "user"
 
   def new
@@ -12,7 +13,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
-      render :new
+      flash[:message] = "You have entered invalid credentials. Please try again."
+      redirect_to new_user_path
     end
   end
 

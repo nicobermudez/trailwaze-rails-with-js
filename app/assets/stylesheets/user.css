@@ -27,6 +27,7 @@ header {
  display: fixed;
  background-color: #fff;
  position: fixed;
+ z-index: 99999;
 }
 nav {
  float: right;
@@ -220,6 +221,7 @@ h4 {
   padding: 15px;
   width: 400px;
   height: 400px;
+  margin: 20px;
 }
 .itinerary img {
   width: 200px;
@@ -279,4 +281,29 @@ h4 {
   width: 290px;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* Edit Itinerary */
+.edit-itinerary {
+  text-align: center;
+  margin-top: 20px;
+}
+.button_to input {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background-color: #EC6A5C;
+  width:290px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* View Itinerary */
+.view-itinerary {
+  text-align: center;
+  margin-top: 120px;
 }

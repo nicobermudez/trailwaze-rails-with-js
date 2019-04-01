@@ -147,6 +147,8 @@ GEM
     public_suffix (3.0.3)
     puma (3.12.1)
     rack (2.0.6)
+    rack-flash3 (1.0.5)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.2.1)
@@ -246,6 +248,7 @@ DEPENDENCIES
   pg (= 1.1.4)
   pry
   puma (~> 3.11)
+  rack-flash3
   rails (~> 5.2.2)
   sass-rails (~> 5.0)
   selenium-webdriver

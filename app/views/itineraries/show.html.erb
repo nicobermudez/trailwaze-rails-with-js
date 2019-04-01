@@ -1,1 +1,9 @@
-<h1>Show Itinerary</h1>
+<section class="view-itinerary">
+  <h3>View Itinerary</h3>
+  <div class="itinerary">
+    <h4><%= @itinerary.title %></h4>
+    <img src="<%= asset_path("airplane-img.jpg")%>">
+    <p><%= @itinerary.description %></p>
+    <p>Budget: $<%= @itinerary.budget %></p>
+  </div>
+</section>

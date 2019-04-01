@@ -12,12 +12,11 @@
           <div class="itinerary">
             <h4><%= itinerary.title %></h4>
             <img src="<%= asset_path("airplane-img.jpg")%>">
-
             <p><%= itinerary.description %></p>
             <p>Budget: $<%= itinerary.budget %></p>
             <div class="buttons">
               <a class= "btn-primary" href="<%= itinerary_path(itinerary) %>">View</a>
-              <a class= "btn-primary" href="<%= edit_itinerary_path %>">Edit</a>
+              <a class= "btn-primary" href="<%= edit_itinerary_path(itinerary) %>">Edit</a>
             </div>
           </div>
         <% end %>
