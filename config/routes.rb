@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   post '/users/create', to: "users#create"
   get '/logout', to: 'sessions#destroy'
   get '/auth/facebook/callback', to: 'sessions#create'
-  resources :users
-  resources :itineraries
-  resources :destinations
+  resources :users do
+    resources :itineraries
+  end
+  # resources :destinations
 end

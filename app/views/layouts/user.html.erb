@@ -10,10 +10,9 @@
   </head>
 
   <header>
-    <a class="logo" href="<%=itineraries_path(@user) %>">Wanderu</a>
+    <a class="logo" href="<%=user_itineraries_path(@user) %>">Wanderu</a>
     <nav>
-      <!-- Change Browse to another path -->
-      <a href="<%=itineraries_path(@user) %>">Browse</a>
+      <a href="<%=user_itineraries_path(@user) %>">Browse</a>
       <a href="<%=user_path(@user) %>">Library</a>
       <a href="<%= edit_user_path(@user) %>">Profile</a>
       <a href="<%= logout_path %>">Log out</a>

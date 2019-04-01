@@ -4,7 +4,7 @@
     <% if !@user.itineraries %>
       <section class="my-itineraries">
         <p>You currently haven't created any itineraries</p>
-        <div class="button"> <a class= "btn-primary" href="<%= new_itinerary_path %>">Create New</a></div>
+        <div class="button"> <a class= "btn-primary" href="<%= new_user_itinerary_path(@user) %>">Create New</a></div>
       </section>
     <% else %>
       <section class="my-itineraries">
@@ -15,12 +15,12 @@
             <p><%= itinerary.description %></p>
             <p>Budget: $<%= itinerary.budget %></p>
             <div class="buttons">
-              <a class= "btn-primary" href="<%= itinerary_path(itinerary) %>">View</a>
-              <a class= "btn-primary" href="<%= edit_itinerary_path(itinerary) %>">Edit</a>
+              <a class= "btn-primary" href="<%= user_itinerary_path(@user, itinerary) %>">View</a>
+              <a class= "btn-primary" href="<%= edit_user_itinerary_path(@user, itinerary) %>">Edit</a>
             </div>
           </div>
         <% end %>
-        <div class="button"> <a class= "btn-primary" href="<%= new_itinerary_path %>">Create New</a></div>
+        <div class="button"> <a class= "btn-primary" href="<%= new_user_itinerary_path(@user) %>">Create New</a></div>
       </section>
     <% end %>
 

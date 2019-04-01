@@ -1,5 +1,5 @@
 <section class="edit-itinerary">
   <h3>Edit Itinerary</h3>
   <%= render 'form' %>
-  <%= button_to "Delete", @itinerary, :method => :delete %>
+  <%= button_to "Delete", [@user, @itinerary], :method => :delete %>
 </section>

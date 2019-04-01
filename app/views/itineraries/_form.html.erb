@@ -1,4 +1,4 @@
-<%= form_for(@itinerary) do |f| %>
+<%= form_for [@user, @itinerary] do |f| %>
   <% if @itinerary.errors.any? %>
     <div id="error_explanation">
       <p>Please fill out entire form and try again.</p>

@@ -46,12 +46,12 @@ class ItinerariesController < ApplicationController
   end
 
   def set_itinerary
-    @itinerary = Itinerary.find_by(:id => params[:id])
+    set_user
+    @itinerary = @user.itineraries.find_by(:id => params[:id])
   end
 
   def authenticate_user
     set_itinerary
-    set_user
     if @itinerary && @itinerary.user != @user
       redirect_to user_path(@user)
     end
