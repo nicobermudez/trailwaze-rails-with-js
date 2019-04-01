@@ -2,9 +2,7 @@ class ReviewsController < ApplicationController
   before_action :set_itinerary
 
   def create
-    if already_liked?
-      # message
-    else
+    if !already_liked?
       @itinerary.reviews.create(user_id: current_user.id)
       redirect_to itineraries_browse_path
     end
@@ -25,6 +23,6 @@ class ReviewsController < ApplicationController
 
   def set_itinerary
     set_user
-    @itinerary = @user.itineraries.find(params[:itinerary_id])
+    @itinerary = Itinerary.all.find(params[:itinerary_id])
   end
 end

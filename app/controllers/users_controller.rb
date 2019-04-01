@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
+  before_action :require_log_in, only: [:show, :edit, :update]
   layout "user"
 
   def new
@@ -18,19 +19,20 @@ class UsersController < ApplicationController
   end
 
   def show
+    @itineraries = []
+    @user.reviews.each {|review| @itineraries.push(Itinerary.find_by(:id => review.itinerary_id))}
   end
 
   def edit
   end
 
   def update
-    respond_to do |format|
+      binding.pry
       if @user.update(user_params)
-        format.html { redirect_to user_path(@user), notice: 'User was successfully updated.' }
+        redirect_to user_path(@user)
       else
-        format.html { render :edit }
+        render :edit
       end
-    end
   end
 
   private

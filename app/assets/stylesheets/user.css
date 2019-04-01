@@ -202,8 +202,16 @@ h4 {
 }
 
 /* Show Page */
-.show-page p {
+.show-page {
   text-align: center;
+}
+.show-page-first {
+  margin-bottom: 0;
+  padding: 40px 40px 0 40px;
+}
+.show-page-first h3{
+  font-size: 40px;
+  font-weight: 700;
 }
 .buttons {
   margin-top: 40px;
@@ -229,6 +237,7 @@ h4 {
   width: 400px;
   height: 400px;
   margin: 20px;
+  vertical-align: middle;
 }
 .itinerary img {
   width: 200px;
@@ -323,6 +332,7 @@ h4 {
 .browse {
   margin-top: 100px;
   text-align: center;
+  margin-bottom: 120px;
 }
 .browse .button_to input{
   height: 30px;

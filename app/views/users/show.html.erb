@@ -1,5 +1,4 @@
-
-<div class="show-page">
+<section class="show-page-first">
   <h3> My Itineraries</h3>
     <% if !@user.itineraries %>
       <section class="my-itineraries">
@@ -23,13 +22,23 @@
         <div class="button"> <a class= "btn-primary" href="<%= new_user_itinerary_path(@user) %>">Create New</a></div>
       </section>
     <% end %>
+</section>
+
+<section class="show-page">
 
   <h3> My Library </h3>
     <!-- Liked Itineraries -->
-    <% if true %>
+    <% if !@user.reviews %>
       <p>You have nothing in your Library. Browse and like itineraries to save them here.</p>
     <% else %>
-      <div class="itinerary">
-      </div>
+      <% @itineraries.each do |itinerary| %>
+        <div class="itinerary">
+          <h4><%= itinerary.title %></h4>
+          <img src="<%= asset_path("airplane-img.jpg")%>">
+          <p><%= itinerary.description %></p>
+          <p>Budget: $<%= itinerary.budget %></p>
+          <p>Created by: <%= itinerary.user.first_name %></p>
+        </div>
+      <% end %>
     <% end %>
-</div>
+</section>
