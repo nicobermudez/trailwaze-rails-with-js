@@ -1,3 +1,3 @@
-class Transportation < ApplicationRecord
-  belongs_to :itinerary
-end
+# class Transportation < ApplicationRecord
+#   belongs_to :itinerary
+# end

@@ -8,7 +8,6 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
     # redirect to home if not logged in
     def require_log_in
       redirect_to root_path unless logged_in?
