@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
   layout "user"
 
   def new
@@ -17,11 +18,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
   end
 
   def edit
-    @user = current_user
   end
 
   def update
@@ -35,6 +34,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_user
+    @user = current_user
+  end
 
   def auth
     request.env['omniauth.auth']

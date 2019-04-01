@@ -180,7 +180,6 @@ a.btn-primary {
   padding-bottom: 120px;
 }
 .featured {
-  margin-top: 100px;
   text-align: center;
 }
 .feature {
@@ -195,6 +194,11 @@ a.btn-primary {
 }
 h4 {
   font-size: 20px;
+}
+.see-more-btn {
+  text-align: center;
+  padding: 40px;
+  margin-bottom: 100px;
 }
 
 /* Show Page */
