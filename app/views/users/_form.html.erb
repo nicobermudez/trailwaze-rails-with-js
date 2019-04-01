@@ -1,23 +1,9 @@
-
   <%= form_for @user do |f| %>
-
       <% if @user.errors.any? %>
         <div id="error_explanation">
-          <h2>
-            <%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:
-          </h2>
-
-          <ul>
-          <% @user.errors.full_messages.each do |message| %>
-            <li><%= message %></li>
-          <% end %>
-          </ul>
+          <p>You have entered invalid credentials. Please try again.</p>
         </div>
       <% end %>
-
-      <!-- OAuth
-
-      <p> or </p> -->
 
       <div class="form-group">
         <%= f.text_field :username, class: "form-control", placeholder: "Username"  %>
@@ -37,7 +23,5 @@
       <div class="actions">
         <%= f.submit class: "btn btn-primary" %>
       </div>
-
-
 
   <% end %>

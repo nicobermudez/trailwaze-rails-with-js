@@ -21,9 +21,6 @@
   </header>
 
   <body>
-    <% if flash.has?(:message) %>
-      <p style="color:#f0ad4e; text-align: center;"><%= flash[:message] %> </p>
-    <% end %>
     <%= yield %>
 
   <footer>

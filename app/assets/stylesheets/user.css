@@ -47,6 +47,9 @@ nav a:active {
  font-weight: 700;
  padding-left: 20px;
 }
+#error_explanation p{
+  color: #EC6A5C;
+}
 h3 {
   text-align: center;
   margin: 0 40px 40px 40px;
