@@ -1,17 +1,14 @@
 class ItinerariesController < ApplicationController
   layout "user"
-  before_action :authenticate_user, only: [:show, :edit, :update, :destroy]
-  before_action :set_itinerary, only: [:edit, :update, :destroy, :show]
+  before_action :authenticate_user
 
   def index
-    @user = current_user
   end
 
   def show
   end
 
   def new
-    @user = current_user
     @itinerary = Itinerary.new
     @itinerary.user_id = params[:user_id]
   end
@@ -44,14 +41,18 @@ class ItinerariesController < ApplicationController
 
   private
 
-  def set_itinerary
+  def set_user
     @user = current_user
+  end
+
+  def set_itinerary
     @itinerary = Itinerary.find_by(:id => params[:id])
   end
 
   def authenticate_user
     set_itinerary
-    if @itinerary.user != @user
+    set_user
+    if @itinerary && @itinerary.user != @user
       redirect_to user_path(@user)
     end
   end

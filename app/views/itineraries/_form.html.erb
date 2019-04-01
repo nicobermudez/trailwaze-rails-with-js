@@ -1,4 +1,9 @@
 <%= form_for(@itinerary) do |f| %>
+  <% if @itinerary.errors.any? %>
+    <div id="error_explanation">
+      <p>Please fill out entire form and try again.</p>
+    </div>
+  <% end %>
 
   <section class="itinerary-form">
 

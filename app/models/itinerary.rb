@@ -4,4 +4,8 @@ class Itinerary < ApplicationRecord
   has_many :experiences, through: :destinations
   has_many :accommodations, through: :destinations
   has_many :transportations
+
+  validates :title, presence: true
+  validates :description, presence: true
+  validates :budget, presence: true
 end
