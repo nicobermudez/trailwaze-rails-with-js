@@ -15,30 +15,6 @@ ActiveRecord::Schema.define(version: 2019_04_01_171237) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "destinations", force: :cascade do |t|
-    t.bigint "itinerary_id"
-    t.string "city"
-    t.string "country"
-    t.datetime "check_in_date"
-    t.datetime "check_out_date"
-    t.integer "price_per_night"
-    t.integer "total_price"
-    t.string "accommodation_link"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["itinerary_id"], name: "index_destinations_on_itinerary_id"
-  end
-
-  create_table "experiences", force: :cascade do |t|
-    t.bigint "destination_id"
-    t.string "category"
-    t.string "name"
-    t.string "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["destination_id"], name: "index_experiences_on_destination_id"
-  end
-
   create_table "itineraries", force: :cascade do |t|
     t.bigint "user_id"
     t.string "title"
@@ -63,14 +39,6 @@ ActiveRecord::Schema.define(version: 2019_04_01_171237) do
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
-  create_table "transportations", force: :cascade do |t|
-    t.string "category"
-    t.string "name"
-    t.integer "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -83,8 +51,6 @@ ActiveRecord::Schema.define(version: 2019_04_01_171237) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "destinations", "itineraries"
-  add_foreign_key "experiences", "destinations"
   add_foreign_key "itineraries", "users"
   add_foreign_key "reviews", "itineraries"
   add_foreign_key "reviews", "users"
