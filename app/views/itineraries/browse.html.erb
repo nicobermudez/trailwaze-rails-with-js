@@ -3,21 +3,38 @@
   <h3>Browse</h3>
   <div class="search-bar">
     <img src="<%= asset_path('search-icon.png') %>">
-      <input class="search-input" placeholder="Try 'Bali'">
+    <form method="get", action="<%=itineraries_browse_path%>"><input name="search" class="search-input" placeholder= "<%= params[:search] || "Try 'Bali'"%>"></form>
   </div>
 
-  <% if Itinerary.all.empty? %>
-    <h3>Empty Feed</h3>
-  <% else %>
-    <% sorted_itineraries = Itinerary.all %><%# .sort_by {|itinerary| itinerary[:total_reviews]}  %>
-      <% sorted_itineraries.each do |itinerary| %>
-        <div class="itinerary">
-          <h4><%= itinerary.title %></h4>
-          <img src="<%= asset_path("airplane-img.jpg")%>">
-          <p><%= itinerary.description %></p>
-          <p>Budget: $<%= itinerary.budget %></p>
-            <%= button_to [itinerary.reviews.count], itinerary_reviews_path(itinerary), method: :post%>
-        </div>
-      <% end %>
-  <% end %>
+    <% @itinerary_search = Itinerary.search(params[:search]) %>
+    <% if Itinerary.all.empty? %>
+      <h3>Empty Feed</h3>
+    <% else %>
+      <%# .sort_by {|itinerary| itinerary[:total_reviews]}  %>
+      <% if @itinerary_search != nil %>
+        <% if @itinerary_search.empty? %>
+          <p>Oops - No Results For "<%= params[:search] %>"</p>
+        <% else %>
+          <% @itinerary_search.each do |itinerary| %>
+            <div class="itinerary">
+              <h4><%= itinerary.title %></h4>
+              <img src="<%= asset_path("airplane-img.jpg")%>">
+              <p><%= itinerary.description %></p>
+              <p>Budget: $<%= itinerary.budget %></p>
+                <%= button_to [itinerary.reviews.count], itinerary_reviews_path(itinerary), method: :post%>
+            </div>
+          <% end %>
+        <% end %>
+      <% else %>
+          <% Itinerary.all.each do |itinerary| %>
+            <div class="itinerary">
+              <h4><%= itinerary.title %></h4>
+              <img src="<%= asset_path("airplane-img.jpg")%>">
+              <p><%= itinerary.description %></p>
+              <p>Budget: $<%= itinerary.budget %></p>
+                <%= button_to [itinerary.reviews.count], itinerary_reviews_path(itinerary), method: :post%>
+            </div>
+          <% end %>
+        <% end %>
+    <% end %>
 </section>

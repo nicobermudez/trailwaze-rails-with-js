@@ -14,9 +14,9 @@ class Itinerary < ApplicationRecord
 
   def self.search(search)
     if search
-      itinerary = Itinerary.find_by(title: search) || Itinerary.find_by(description: search)
+      itinerary = Itinerary.where(['lower(title) LIKE ?', "%#{search.downcase}%"]) || IItinerary.where(['lower(description) LIKE ?', "%#{search.downcase}%"])
       if itinerary
-        self.where(itinerary_id: itinerary)
+        self.where(id: itinerary)
       else
         Itinerary.all
       end
