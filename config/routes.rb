@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get '/auth/facebook/callback', to: 'sessions#create'
   get '/itineraries/browse', to: 'itineraries#browse'
+  
   resources :users do
     resources :itineraries
   end

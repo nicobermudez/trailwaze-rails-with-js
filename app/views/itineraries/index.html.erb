@@ -2,7 +2,7 @@
     <h3>Explore</h3>
   <div class="search-bar">
     <img src="<%= asset_path('search-icon.png') %>">
-      <input class="search-input" placeholder="Try 'Bali'">
+      <form method="get", action="<%=itineraries_browse_path%>"><input name="search" class="search-input" placeholder="Try 'Bali'"></form>
   </div>
 </section>
 

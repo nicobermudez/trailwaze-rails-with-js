@@ -10,9 +10,6 @@ class ReviewsController < ApplicationController
 
   private
 
-  def set_itinerary
-  end
-
   def already_liked?
     Review.where(user_id: current_user.id, itinerary_id: params[:itinerary_id]).exists?
   end

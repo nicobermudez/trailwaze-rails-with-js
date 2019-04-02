@@ -3,6 +3,7 @@ class ItinerariesController < ApplicationController
   before_action :authenticate_user
 
   def index
+    @itinerary_search = Itinerary.search(params[:search])
   end
 
   def show
