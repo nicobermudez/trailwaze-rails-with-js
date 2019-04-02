@@ -5,6 +5,10 @@ ruby '2.3.7'
 # testing
 gem 'pry'
 
+# jQuery
+
+gem 'jquery-rails'
+
 # security, password encryption
 gem 'bcrypt'
 

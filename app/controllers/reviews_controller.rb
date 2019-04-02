@@ -2,19 +2,19 @@ class ReviewsController < ApplicationController
   before_action :set_itinerary
 
   def create
-    total_itinerary_reviews
-    if !already_liked?
-      @itinerary.reviews.create(user_id: current_user.id, rating: 5)
+    if already_liked?
+      @itinerary.reviews.find_by(user_id: current_user.id).destroy
+      redirect_to itineraries_browse_path
+    else
+      @itinerary.reviews.create(user_id: current_user.id, like: true)
       redirect_to itineraries_browse_path
     end
   end
 
-  private
-
-  def total_itinerary_reviews
-    set_itinerary
-    @total_itinerary_reviews = @itinerary.reviews.count
+  def destroy
   end
+
+  private
 
   def already_liked?
     Review.where(user_id: current_user.id, itinerary_id: params[:itinerary_id]).exists?

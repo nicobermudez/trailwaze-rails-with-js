@@ -335,9 +335,44 @@ h4 {
   margin-bottom: 120px;
 }
 
-.browse .button_to input{
-  height: 30px;
-  width: 30px;
-  padding: 0;
-  margin: 5px;
+.itinerary .button_to input {
+  position: relative;
+  width: 100px;
+  border-radius: 5em;
 }
+
+/*
+.button-like {
+  transition: all ease 0.4s;
+}
+
+.button-like:focus {
+  background-color: transparent;
+}
+
+
+.button-like:hover {
+  border-color: #cc4b37;
+  background-color: transparent;
+  color: #000;
+}
+
+.button-like:hover .fa,
+.button-like:hover span {
+  color: #cc4b37;
+}
+
+.liked {
+  background-color: #cc4b37;
+  border-color: #cc4b37;
+}
+
+.liked:focus {
+  background-color: #cc4b37;
+}
+
+.liked:hover {
+  background-color: #cc4b37;
+  border-color: #cc4b37;
+  color: #fff;
+} */
