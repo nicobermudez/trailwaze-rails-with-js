@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_04_01_171237) do
     t.bigint "user_id"
     t.bigint "itinerary_id"
     t.string "title"
-    t.integer "rating"
+    t.boolean "like"
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
