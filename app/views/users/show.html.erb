@@ -37,6 +37,8 @@
           <p><%= itinerary.description %></p>
           <p>Budget: $<%= itinerary.budget %></p>
           <p>Created by: <%= itinerary.user.first_name %></p>
+          <%= button_to [itinerary.reviews.count, "Likes"], itinerary_reviews_path(itinerary), method: :post, onclick: "likeButton(this)", class: "button-like" %>
+          <%= button_to ["View"], itinerary_path(itinerary), method: :get %>
         </div>
       <% end %>
     <% end %>

@@ -249,6 +249,9 @@ h4 {
   border-radius: 4px;
   margin-top: 10px;
 }
+.my-itineraries .itinerary .buttons {
+  margin-top: 40px;
+}
 .my-itineraries .button {
   margin-top: 120px;
 }
