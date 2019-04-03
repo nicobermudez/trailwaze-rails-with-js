@@ -19,8 +19,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @reviewed_itineraries = @user.reviews.all
     @itineraries = []
-    @user.reviews.each {|review| @itineraries.push(Itinerary.find_by(:id => review.itinerary_id))}
+    @reviewed_itineraries.each {|review| @itineraries.push(Itinerary.find_by(:id => review.itinerary_id))}
   end
 
   def edit
