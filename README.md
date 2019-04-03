@@ -1,24 +1,18 @@
-# README
+#Sonderu - Rails Project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![alt text](app/assets/images/sonderu.png?raw=true "Sonderu")
 
-Things you may want to cover:
+Sonderu is an social-based application aimed to make it easier to share travel itineraries with others, while at the same time allowing users to monetize from their hard work spent creating them.
 
-* Ruby version
 
-* System dependencies
+###Installation
+* clone the repo
+* bundle install
+* rails db:migrate
+* rails s to run the bot
 
-* Configuration
+###Contributing
+* Bug reports and pull requests are welcome
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###License
+Sonderu is licensed under the MIT license. (http://opensource.org/licenses/MIT)
