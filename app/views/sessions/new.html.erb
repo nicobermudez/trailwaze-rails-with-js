@@ -7,6 +7,12 @@
 
     <%= stylesheet_link_tag    'user', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+      body {
+        background-image: url(<%= asset_path('ian-dooley-280928-unsplash.jpg')%>);
+        background-size: cover;
+      }
+    </style>
   </head>
 
   <header>
