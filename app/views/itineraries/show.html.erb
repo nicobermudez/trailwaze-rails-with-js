@@ -5,8 +5,7 @@
     <img src="<%= asset_path("airplane-img.jpg")%>">
     <p><%= @itinerary.description %></p>
     <p>Budget: $<%= @itinerary.budget %></p>
-    <% if @reviews %>
-    <%= @reviews.average_review %>
-    <% end %>
+    <p>Created by: <%= @itinerary.user.first_name %></p>
+    <%= button_to [@itinerary.reviews.count, "Likes"], itinerary_reviews_path(@itinerary), method: :post, onclick: "likeButton(this)", class: "button-like" %>
   </div>
 </section>

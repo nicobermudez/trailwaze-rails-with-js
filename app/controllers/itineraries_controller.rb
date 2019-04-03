@@ -1,11 +1,13 @@
 class ItinerariesController < ApplicationController
   layout "user"
-  before_action :authenticate_user
+  before_action :authenticate_user, except: :show
 
   def index
   end
 
   def show
+    set_user
+    @itinerary = Itinerary.find_by(id: params[:id])
   end
 
   def new
