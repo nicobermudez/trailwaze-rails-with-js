@@ -1,8 +1,8 @@
-# Sonderu - Rails Project
+# Trailwaze - Social Travel App
 
-![alt text](app/assets/images/sonderu.png?raw=true "Sonderu")
+![alt text](app/assets/images/trailwaze.png?raw=true "Trailwaze")
 
-Sonderu is an social-based application aimed to make it easier to share travel itineraries with others, while at the same time allowing users to monetize from their hard work spent creating them.
+Trailwaze is an social-based application aimed to make it easier to share travel itineraries with others, while at the same time allowing users to monetize from their hard work spent creating them.
 
 
 ### Installation
@@ -12,7 +12,7 @@ Sonderu is an social-based application aimed to make it easier to share travel i
 * rails s to run the bot
 
 ### Contributing
-* Bug reports and pull requests are welcome
+Bug reports and pull requests are welcome
 
 ### License
-Sonderu is licensed under the MIT license. (http://opensource.org/licenses/MIT)
+Trailwaze is licensed under the MIT license. (http://opensource.org/licenses/MIT)
