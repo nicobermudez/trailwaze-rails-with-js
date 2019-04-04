@@ -24,7 +24,7 @@ body {
   margin: 0;
   height: 100vh;
   /* background-color: rgb(244, 249, 250); */
-  background-image: url(ian-dooley-280928-unsplash.jpg);
+  background-image: url("ian-dooley-280928-unsplash.jpg");
   background-size: cover;
 }
 a {
