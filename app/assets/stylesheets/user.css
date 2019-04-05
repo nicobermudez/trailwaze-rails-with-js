@@ -210,6 +210,9 @@ h4 {
 .show-page {
   text-align: center;
 }
+.show-page .itinerary .buttons {
+  text-align: left;
+}
 .show-page-first {
   margin-bottom: 0;
   padding: 40px 40px 0 40px;
@@ -341,55 +344,30 @@ h4 {
   margin-left: 40px;
   margin-right: 40px;
 }
-
+.show-page-first .itinerary .buttons{
+  text-align: center;
+}
 .itinerary .buttons {
   width: 400px;
-  margin-top: 0px;
+  text-align: left;
+  margin: 0 5px;
 }
-.itinerary .button_to {
-  display: inline-block;
-  width: 100px;
-}
-.itinerary .button_to input, .buttons .btn-primary {
-  width: 100px;
+
+.itinerary .button_to input {
+  width: 60px;
   border-radius: 5em;
+  margin: 0;
 }
 .itinerary p {
   margin: 5px;
 }
-
-/*
-.button-like {
-  transition: all ease 0.4s;
+.buttons a{
+  font-size: 13px;
+  margin-left: 10px;
 }
 
-.button-like:focus {
-  background-color: transparent;
+/* reviews */
+.reviews {
+  text-align: center;
+  margin-top: 120px;
 }
-
-
-.button-like:hover {
-  border-color: #cc4b37;
-  background-color: transparent;
-  color: #000;
-}
-
-.button-like:hover .fa,
-.button-like:hover span {
-  color: #cc4b37;
-}
-
-.liked {
-  background-color: #cc4b37;
-  border-color: #cc4b37;
-}
-
-.liked:focus {
-  background-color: #cc4b37;
-}
-
-.liked:hover {
-  background-color: #cc4b37;
-  border-color: #cc4b37;
-  color: #fff;
-} */

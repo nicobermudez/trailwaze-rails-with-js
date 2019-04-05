@@ -15,6 +15,13 @@ class ItinerariesController < ApplicationController
     @itinerary.user_id = params[:user_id]
   end
 
+  def browse
+    set_user
+    if @itinerary = Itinerary.find_by(id: params[:itinerary_id])
+      @reviews ||= @itinerary.reviews.select {|review| review.like}
+    end
+  end
+
   def create
     @itinerary = Itinerary.new(itinerary_params)
     @itinerary.user_id = current_user.id

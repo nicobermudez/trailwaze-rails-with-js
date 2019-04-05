@@ -1,5 +1,10 @@
 class ReviewsController < ApplicationController
+  layout "user"
   before_action :set_itinerary
+
+  def index
+    @reviews ||= @itinerary.reviews.select {|review| review.like}
+  end
 
   def create
     if already_liked?
@@ -28,4 +33,5 @@ class ReviewsController < ApplicationController
     set_user
     @itinerary = Itinerary.all.find(params[:itinerary_id])
   end
+
 end

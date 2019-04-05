@@ -7,10 +7,6 @@ class User < ApplicationRecord
   has_many :itineraries
   has_many :reviews, dependent: :destroy
   has_many :reviewed_itineraries, through: :itineraries
-  # has_many :destinations, through: :itineraries
-  # has_many :accomodations, through: :itineraries
-  # has_many :experiences, through: :itineraries
-  # has_many :transportations, through: :itineraries
 
   # validations
   validates :username, presence: true

@@ -6,6 +6,9 @@
     <p><%= @itinerary.description %></p>
     <p>Budget: $<%= @itinerary.budget %></p>
     <p>Created by: <%= @itinerary.user.first_name %></p>
-    <%= button_to [@itinerary.reviews.count, "Likes"], itinerary_reviews_path(@itinerary), method: :post, onclick: "likeButton(this)", class: "button-like" %>
+    <div class="buttons">
+      <%= button_to ["Like"], itinerary_reviews_path(@itinerary), method: :post, onclick: "likeButton(this)", class: "button-like" %>
+      <%= link_to @reviews ||= "#{@itinerary.reviews.select {|review| review.like}.count} Likes", itinerary_reviews_path(@itinerary) %>
+    </div>
   </div>
 </section>
