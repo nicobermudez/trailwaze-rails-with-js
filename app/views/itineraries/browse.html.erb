@@ -26,7 +26,7 @@
               <p>Created by: <%= itinerary.user.first_name %></p>
               <div class="buttons">
                 <%= button_to ["Like"], itinerary_reviews_path(itinerary), method: :post, onclick: "likeButton(this)", class: "button-like" %>
-                <%= link_to @reviews ||= "#{itinerary.reviews.select {|review| review.like}.count} Likes", itinerary_reviews_path(itinerary) %>
+                <%= link_to reviews ||= "#{itinerary.reviews.select {|review| review.like}.count} Likes", itinerary_reviews_path(itinerary) %>
               </div>
             </div>
           <% end %>
@@ -43,7 +43,7 @@
                 <p>Created by: <%= itinerary.user.first_name %></p>
                 <div class="buttons">
                   <%= button_to ["Like"], itinerary_reviews_path(itinerary), method: :post, onclick: "likeButton(this)", class: "button-like" %>
-                  <%= link_to @reviews ||= "#{itinerary.reviews.select {|review| review.like}.count} Likes", itinerary_reviews_path(itinerary) %>
+                  <%= link_to reviews ||= "#{itinerary.reviews.select {|review| review.like}.count} Likes", itinerary_reviews_path(itinerary) %>
                 </div>
 
             </div>
