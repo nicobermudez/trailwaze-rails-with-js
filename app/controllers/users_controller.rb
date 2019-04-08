@@ -19,16 +19,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @reviewed_itineraries = @user.reviews.all
-    @itineraries = []
-    @reviewed_itineraries.each {|review| @itineraries.push(Itinerary.find_by(:id => review.itinerary_id))}
+    @reviewed_itineraries = []
+    @user.reviews.all.each {|review| @reviewed_itineraries.push(Itinerary.find_by(:id => review.itinerary_id))}
   end
 
   def edit
   end
 
   def update
-    binding.pry
       if @user.update(user_params)
         redirect_to user_path(@user)
       else

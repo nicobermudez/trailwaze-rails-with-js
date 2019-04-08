@@ -30,7 +30,7 @@
     <% if !@user.reviews %>
       <p>You have nothing in your Library. Browse and like itineraries to save them here.</p>
     <% else %>
-      <% @itineraries.each do |itinerary| %>
+      <% @reviewed_itineraries.each do |itinerary| %>
         <div class="itinerary">
           <h4><%= itinerary.title %></h4>
           <img src="<%= asset_path("airplane-img.jpg")%>">
