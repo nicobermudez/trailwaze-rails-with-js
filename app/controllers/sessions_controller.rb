@@ -16,7 +16,6 @@ class SessionsController < ApplicationController
 
   # call to db to create new user
   def create
-
     if auth
       #Log in via omniauth
       @user = User.find_or_create_by_omniauth(auth)

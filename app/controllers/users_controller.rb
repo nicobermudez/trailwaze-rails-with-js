@@ -40,10 +40,6 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
-  def auth
-    request.env['omniauth.auth']
-  end
-
   def user_params
     params.require(:user).permit(
       :username,
