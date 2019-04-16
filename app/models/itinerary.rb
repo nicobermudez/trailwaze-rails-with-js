@@ -18,4 +18,6 @@ class Itinerary < ApplicationRecord
       end
     end
   end
+
+
 end
