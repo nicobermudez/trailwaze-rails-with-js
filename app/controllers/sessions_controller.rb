@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  layout "user"
+  layout "application"
 
   # logout
   def destroy
@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
   def new
     @user = User.new
     @users = User.all
-    render :layout => false
   end
 
   # call to db to create new user
