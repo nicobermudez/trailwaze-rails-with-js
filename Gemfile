@@ -1,29 +1,23 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
 ruby '2.6.2'
 gem 'haml'
 gem 'rails_12factor'
-
 # testing
 gem 'pry'
-
 # jQuery
-
 gem 'jquery-rails'
-
+# Active Model Serializers
+gem 'active_model_serializers'
 # security, password encryption
 gem 'bcrypt'
-
 # gem for error messages
 gem 'rack-flash3'
-
 # omniauth gems
 gem 'dotenv-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-google'
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
