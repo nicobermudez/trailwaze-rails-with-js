@@ -1,4 +1,9 @@
 <%= form_for @user, :url => url_for(:controller => 'sessions', :action => 'create') do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <p>Invalid credentials. Please try again.</p>
+    </div>
+  <% end %>
 
     <div class="form-group">
       <%= f.text_field :username, class: "form-control" , placeholder: "Username"%>
