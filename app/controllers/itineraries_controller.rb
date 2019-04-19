@@ -16,7 +16,6 @@ class ItinerariesController < ApplicationController
   end
 
   def browse
-    set_user
     if @itinerary = Itinerary.find_by(id: params[:itinerary_id])
       @reviews ||= @itinerary.reviews.select {|review| review.like}
     end

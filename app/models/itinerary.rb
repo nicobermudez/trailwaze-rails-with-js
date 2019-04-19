@@ -19,5 +19,8 @@ class Itinerary < ApplicationRecord
     end
   end
 
+  def already_liked?(user)
+    Review.where(user_id: user.id, itinerary_id: self.id).exists?
+  end
 
 end

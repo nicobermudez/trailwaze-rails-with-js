@@ -213,6 +213,63 @@ h4 {
 }
 
 /* New Itinerary */
+.form{
+  text-align: center;
+  color: #000;
+  padding-top: 80px;
+  padding-bottom: 60px;
+  margin: 120px auto;
+  text-align: center;
+  width: 400px;
+  border-radius: 15px;
+  background-color: #fff;
+}
+.form p {
+  width: 220px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  font-size: 14px;
+}
+.form h3 {
+  font-size: 24px;
+}
+.form-group input {
+  border: 0.5px solid #0A2239;
+  border-radius: 4px;
+  padding: 15px;
+  width: 260px;
+  margin-top: 10px
+}
+.btn-primary {
+  width: 290px;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #EC6A5C;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.button {
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background-color: #EC6A5C;
+  width:290px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 4px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+a.btn-primary {
+  padding: 15px 105px;
+}
+.form a {
+  color: #EC6A5C;
+}
 .new-itinerary {
   text-align: center;
   margin-top: 100px;
@@ -274,7 +331,7 @@ h4 {
 }
 
 .itinerary .button_to input {
-  width: 60px;
+  width: 80px;
   border-radius: 5em;
   margin: 0;
 }
