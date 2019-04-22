@@ -45,7 +45,6 @@
                   <%= button_to [itinerary.already_liked?(@user) ? "Liked" : "Like"], itinerary_reviews_path(itinerary), method: :post, onclick: "likeButton(this)"%>
                   <%= link_to reviews ||= "#{itinerary.reviews.select {|review| review.like}.count} Likes", itinerary_reviews_path(itinerary) %>
                 </div>
-
             </div>
           <% end %>
         <% end %>
