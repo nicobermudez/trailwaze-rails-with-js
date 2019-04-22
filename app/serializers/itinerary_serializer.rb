@@ -1,6 +1,4 @@
 class ItinerarySerializer < ActiveModel::Serializer
-  attributes :id
-
+  attributes :id, :title, :description, :budget, :departing_city, :departing_country
   has_many :reviews
-  belongs_to :user
 end

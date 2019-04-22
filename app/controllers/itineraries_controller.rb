@@ -3,6 +3,11 @@ class ItinerariesController < ApplicationController
   before_action :authenticate_user, except: :show
 
   def index
+    @itineraries = Itinerary.all
+    respond_to do |format|
+      format.html
+      format.json {render json: @itineraries}
+    end
   end
 
   def show
