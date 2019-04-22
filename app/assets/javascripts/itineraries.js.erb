@@ -2,12 +2,15 @@ $(() => {
   bindClickHandlers()
 })
 
+$('.browse-itineraries').onclick = function(runFunction) {
+  console.log("YO")
+  bindClickHandlers()
+}
+
 // Hijack search and render using ajax
 let mapKeys = ""
 const bindClickHandlers = function() {
   $('.search-input').on('keydown', function(e) {
-
-
 
     // Add search input to mapKeys
     if(e.keyCode >= 65 && e.keyCode <= 90 ) {
@@ -18,14 +21,13 @@ const bindClickHandlers = function() {
       e.preventDefault()
     }
 
-    history.pushState(null, null, "itineraries")
+
 
     fetch(`/itineraries.json`).then(res => res.json()).then(function(data) {
 
       // Remove featured itineraries
       $('.featured').html("")
       $('.search-itineraries').html("")
-
 
       // search through itineraries
       let filter = []
@@ -74,9 +76,12 @@ Itinerary.prototype.formatIndex = function() {
   let itineraryHtml = `
     <div class="itinerary">
       <a class="show-link" data-id="${this.id}" href="/itineraries/${this.id}"><h4>${this.title}</h4></a>
-
+      <img src="<%= asset_path("airplane-img.jpg")%>">
       <p>${this.description} </p>
       <p>Budget: $${this.budget}</p>
+      <div class="buttons">
+
+      </div>
     </div>
   `
   return itineraryHtml
