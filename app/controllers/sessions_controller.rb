@@ -28,7 +28,8 @@ class SessionsController < ApplicationController
         redirect_to user_path(@user)
       else
         @user = User.new
-        render 'new', :layout => 'application'
+        @user.errors.add(:username, :invalid, message: 'Invalid credentials')
+        render :new, :layout => 'application'
       end
     end
   end

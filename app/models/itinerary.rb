@@ -2,7 +2,6 @@ class Itinerary < ApplicationRecord
 
   belongs_to :user
   has_many :reviews, dependent: :destroy
-  has_many :reviewed_itineraries, through: :users, source: :reviews
 
   validates :title, presence: true
   validates :description, presence: true

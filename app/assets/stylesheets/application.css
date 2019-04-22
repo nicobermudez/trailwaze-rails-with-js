@@ -59,34 +59,10 @@ nav a:active {
 }
 .user-homepage-nav {
   text-align: center;
-  margin-top: 20vh;
+  margin-top: 120px;
   font-weight: 700;
   font-size: 60px;
   color: #fff;
-}
-.search-bar {
-  display: flex;
-  padding: 16px;
-  box-shadow: rgba(25, 50, 100, 0.25) 0px 10px 50px;
-  width: 60%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #fff;
-  border-radius: 20px;
-}
-.search-bar img {
-  width: 24px;
-  height: 24px;
-}
-.search-input {
-  margin-left: 5px;
-  width: 60%;
-  padding: 5px;
-  border: 0px solid;
-  background-color: #fff;
-}
-.search-input:focus {
-  outline: 0;
 }
 footer {
   font-size: 12px;
@@ -104,7 +80,7 @@ footer {
   color: #000;
   padding-top: 80px;
   padding-bottom: 60px;
-  margin: 120px auto 20px auto;
+  margin: 60px auto 20px auto;
   text-align: center;
   width: 400px;
   border-radius: 15px;
@@ -116,7 +92,6 @@ footer {
 #error_explanation p{
   color: #EC6A5C;
 }
-
 .form p {
   width: 220px;
   text-align: center;

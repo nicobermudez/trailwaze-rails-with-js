@@ -6,7 +6,6 @@ class User < ApplicationRecord
   # model relationships
   has_many :itineraries
   has_many :reviews, dependent: :destroy
-  has_many :reviewed_itineraries, through: :itineraries
 
   # validations
   validates :username, presence: true
