@@ -7,12 +7,18 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.find_or_create_by(user_id: current_user.id, itinerary_id: params[:itinerary_id])
-    if !already_liked?(@review)
-      @review.update(like: true)
-      render json: @itinerary.reviews, status: 201
+    @review ||= Review.find_by(user_id: current_user.id, itinerary_id: params[:itinerary_id])
+    if @review
+      if !already_liked?(@review)
+        @review.update(like: true)
+        render json: @itinerary.reviews, status: 201
+      else
+        @review.update(like: false)
+        render json: @itinerary.reviews, status: 201
+      end
     else
-      @review.update(like: false)
+      @review = Review.new(user_id: current_user.id, itinerary_id: params[:itinerary_id], like: true)
+      @review.save
       render json: @itinerary.reviews, status: 201
     end
   end

@@ -48,12 +48,16 @@ table {
 }
 /* -------------------------------------------------------------------------- */
 
+html {
+  position: relative;
+  min-height: 100vh;
+}
 body {
  font-family: 'Barlow', sans-serif;
  font-size: 16px;
  color: #000;
  background-color: rgb(228, 230, 233);
- margin-top: 80px;
+ margin: 80px 0 40px 0;
  line-height: 1.5;
 }
 a {
@@ -107,6 +111,7 @@ footer {
   height: 40px;
   border-top: 0.1px solid #101D42;
   bottom: 0;
+  position: absolute;
 }
 /* Form */
 .form{
@@ -206,9 +211,8 @@ footer {
 }
 
 .search-itineraries {
-  margin-bottom: 40px;
+  margin-bottom: 80px;
   text-align: center;
-
 }
 
 /* Show Page */
@@ -253,6 +257,7 @@ footer {
   width: 400px;
   height: 400px;
   margin: 20px;
+  position: relative;
 }
 .itinerary h4 {
   font-size: 20px;
@@ -262,6 +267,18 @@ footer {
   width: 200px;
   border-radius: 4px;
   margin-top: 10px;
+}
+.social-likes {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  transform: translate(100%, -100%);
+}
+.social-likes a {
+  font-size: 14px;
+}
+.social-likes input {
+  outline: 0;
 }
 
 /* New Itinerary */
