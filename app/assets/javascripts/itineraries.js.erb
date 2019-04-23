@@ -1,10 +1,12 @@
-$(() => {
-  bindClickHandlers()
-})
+$(document).on('turbolinks:load', function main() {
 
-// Hijack search and render using ajax
-let mapKeys = ""
-const bindClickHandlers = function() {
+  $('#target').submit(function(event) {
+        event.preventDefault()
+        console.log("prevented!")
+    });
+
+  let mapKeys = ""
+
   $('.search-input').on('keydown', function(e) {
 
     // Add search input to mapKeys
@@ -15,8 +17,6 @@ const bindClickHandlers = function() {
     } else if(e.keyCode == 13) {
       e.preventDefault()
     }
-
-
 
     fetch(`/itineraries.json`).then(res => res.json()).then(function(data) {
 
@@ -48,14 +48,22 @@ const bindClickHandlers = function() {
     })
   })
 
-  // $(document).on('click', ".show-link", function(e) {
-  //   e.preventDefault()
-  //   let id = $(this).attr('data-id')
-  //   fetch(`/itineraries/${id}.json`).then(res => res.json()).then(function(data) {
-  //
-  //   })
-  // })
-}
+  // Hijack submit button and post method
+  $(document).on('click', "#target", function(e) {
+    e.preventDefault()
+    alert("Success")
+    let id = $(this).attr('data-id')
+    let values = $(this).serialize();
+    let posting = $.post(`/itineraries/${id}/reviews`, values)
+
+    posting.done(function(data) {
+      let review = data
+
+      // Show how many likes per post below
+
+    })
+  })
+})
 
 function Itinerary(itinerary) {
   this.id = itinerary.id
@@ -74,9 +82,10 @@ Itinerary.prototype.formatIndex = function() {
       <img src="<%= asset_path("airplane-img.jpg")%>">
       <p>${this.description} </p>
       <p>Budget: $${this.budget}</p>
-      <div class="buttons">
-
-      </div>
+      <form id="target" method="post" action="/itineraries/${this.id}/reviews">
+        <input type="text">
+        <input class="submit" type="submit" value="Like"></input>
+      </form>
     </div>
   `
   return itineraryHtml

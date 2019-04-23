@@ -4,6 +4,7 @@ class ItinerariesController < ApplicationController
 
   def index
     @itineraries = Itinerary.all
+    @itinerary = Itinerary.find_by(id: params[:id]) if params[:id]
     respond_to do |format|
       format.html
       format.json {render json: @itineraries}
