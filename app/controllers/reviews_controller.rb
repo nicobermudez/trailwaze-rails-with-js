@@ -4,6 +4,10 @@ class ReviewsController < ApplicationController
 
   def index
     @reviews ||= @itinerary.reviews.select {|review| review.like}
+    respond_to do |format|
+      format.html
+      format.json {render json: @reviews}
+    end
   end
 
   def create
@@ -23,8 +27,6 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def destroy
-  end
 
   private
 

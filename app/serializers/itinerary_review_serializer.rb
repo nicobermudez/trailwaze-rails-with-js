@@ -1,3 +1,3 @@
 class ItineraryReviewSerializer < ActiveModel::Serializer
-  attributes :id, :like
+  attributes :id, :itinerary_id, :user_id, :like
 end
