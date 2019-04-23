@@ -51,16 +51,23 @@ $(document).on('turbolinks:load', function main() {
   // Hijack submit button and post method
   $(document).on('click', "#target", function(e) {
     e.preventDefault()
-    alert("Success")
     let id = $(this).attr('data-id')
     let values = $(this).serialize();
     let posting = $.post(`/itineraries/${id}/reviews`, values)
 
     posting.done(function(data) {
-      let review = data
+      if(data!= null) {
+        let reviews = data
+        let number_of_likes = 0
 
-      // Show how many likes per post below
-
+        reviews.forEach((review) => {
+          if(review.like == true) {
+            number_of_likes++
+          }
+        })
+        // Show how many likes per post below
+        $('.likes').text(number_of_likes)
+      }
     })
   })
 })
@@ -73,6 +80,13 @@ function Itinerary(itinerary) {
   this.departing_city = itinerary.departing_city
   this.departing_country = itinerary.departing_country
   this.reviews = itinerary.reviews
+  this.number_of_likes = 0;
+
+  this.reviews.forEach((review) => {
+    if(review.like) {
+      this.number_of_likes++
+    }
+  })
 }
 
 Itinerary.prototype.formatIndex = function() {
@@ -82,10 +96,10 @@ Itinerary.prototype.formatIndex = function() {
       <img src="<%= asset_path("airplane-img.jpg")%>">
       <p>${this.description} </p>
       <p>Budget: $${this.budget}</p>
-      <form id="target" method="post" action="/itineraries/${this.id}/reviews">
-        <input type="text">
+      <form id="target" method="post" data-id="${this.id}" action="/itineraries/${this.id}/reviews">
         <input class="submit" type="submit" value="Like"></input>
       </form>
+      <div class="likes">${this.number_of_likes} Likes</div>
     </div>
   `
   return itineraryHtml

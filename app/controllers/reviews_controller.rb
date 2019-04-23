@@ -3,21 +3,16 @@ class ReviewsController < ApplicationController
   before_action :set_itinerary
 
   def index
-    binding.pry
     @reviews ||= @itinerary.reviews.select {|review| review.like}
   end
 
   def create
-    # if already_liked?
-    #   @itinerary.reviews.find_by(user_id: current_user.id).destroy
-    #   redirect_to itineraries_browse_path
-    # else
-    #   @itinerary.reviews.create(user_id: current_user.id, like: true)
-    #   redirect_to itineraries_browse_path
-    # end
-    binding.pry
-    @itinerary.reviews.create(user_id: current_user.id, like: true)
-    render json: @itinerary.review, status: 201
+    if !already_liked?
+      @itinerary.reviews.create(user_id: current_user.id, like: true)
+      render json: @itinerary.reviews, status: 201
+    else
+      @itinerary.reviews.find_by(user_id: current_user.id).destroy
+    end
   end
 
   def destroy
