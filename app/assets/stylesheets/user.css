@@ -131,6 +131,10 @@ footer {
   border-radius: 4px;
   padding: 15px;
   width: 265px;
+  margin-top: 10px;
+}
+.button {
+  margin-top: 20px;
 }
 .btn-primary {
   width: 300px;
@@ -265,9 +269,10 @@ footer {
   text-align: center;
   margin-top: 100px;
 }
-.new-itinerary .itinerary-form {
+.itinerary-form {
   text-align: center;
   margin-left: 40px;
+  height: 100vh;
 }
 .new-itinerary input{
   width: 60%;
