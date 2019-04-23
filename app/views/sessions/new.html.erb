@@ -1,34 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Trailwaze</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<section class="form">
+  <h3>Log in</h3>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= render 'form' %>
+    <!-- OAuth or -->
+  <div class="or-container">
+    <span class="bar-icon"></span>
+    <span class="or-p">or</span>
+    <span class="bar-icon"></span>
+  </div>
 
-  <body>
+  <div class="omniauth">
+    <a href="/auth/facebook"><img src="<%= asset_path("fb-login-2.png") %>"></a>
+  </div>
 
-    <section class="form">
-      <h3>Log in</h3>
-
-      <%= render 'form' %>
-
-      <!-- OAuth or -->
-      <div class="or-container">
-        <span class="bar-icon"></span>
-        <span class="or-p">or</span>
-        <span class="bar-icon"></span>
-      </div>
-
-      <div class="omniauth">
-        <a href="/auth/facebook"><img src="<%= asset_path("fb-login-2.png") %>"></a>
-      </div>
-
-      <p>Don't have an account? <a href=<%= new_user_path %>>Sign up</a></p>
-    </section>
-  </body>
-
-</html>
+  <p>Don't have an account? <a href=<%= new_user_path %>>Sign up</a></p>
+</section>

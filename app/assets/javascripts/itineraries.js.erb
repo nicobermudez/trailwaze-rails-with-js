@@ -48,7 +48,7 @@ $(document).on('turbolinks:load', function main() {
     })
   })
 
-  // Hijack submit button and post method
+  // Hijack submit button and post method on "Like" for each itinerary
   $(document).on('click', "#target", function(e) {
     e.preventDefault()
     let id = $(this).attr('data-id')
@@ -64,7 +64,7 @@ $(document).on('turbolinks:load', function main() {
             number_of_likes++
           }
         })
-        // Show how many likes per post below
+        // Update likes per post below
         if(number_of_likes == 1) {
           $(`.likes-${data[0].itinerary_id}`).text(number_of_likes + " Like")
         } else {

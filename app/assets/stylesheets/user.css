@@ -1,15 +1,57 @@
 
 /* import font Barlow  */
 @import url('https://fonts.googleapis.com/css?family=Barlow');
-html {
-  position: relative;
-  min-height: 100vh;
+
+/* reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* -------------------------------------------------------------------------- */
+
 body {
  font-family: 'Barlow', sans-serif;
  font-size: 16px;
  color: #000;
- margin: 0;
  background-color: rgb(228, 230, 233);
  margin-top: 80px;
  line-height: 1.5;
@@ -64,8 +106,43 @@ footer {
   width: 100vw;
   height: 40px;
   border-top: 0.1px solid #101D42;
-  position: absolute;
   bottom: 0;
+}
+/* Form */
+.form{
+  padding-top: 60px;
+  padding-bottom: 40px;
+  margin: 120px auto 0 auto;
+  text-align: center;
+  width: 400px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+.form p {
+  width: 220px;
+  margin: 10px auto;
+  font-size: 14px;
+}
+.form h3 {
+  font-size: 24px;
+}
+.form-group input {
+  border: 0.5px solid #0A2239;
+  border-radius: 4px;
+  padding: 15px;
+  width: 265px;
+}
+.btn-primary {
+  width: 300px;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #EC6A5C;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.form a {
+  color: #EC6A5C;
 }
 /* Browse Page */
 .search-bar {
@@ -102,7 +179,7 @@ footer {
 }
 .show-page {
   padding: 40px;
-  padding-bottom: 120px;
+  padding-bottom: 60px;
 }
 .featured {
   text-align: center;
@@ -115,15 +192,19 @@ footer {
   text-align: center;
 }
 .feature img {
-  width: 200px;
+  width: 250px;
 }
-h4 {
-  font-size: 20px;
-}
-.see-more-btn {
+.show-all {
+  font-size: 18px;
   text-align: center;
-  padding: 40px;
-  margin-bottom: 100px;
+  margin: 30px 0;
+  font-weight: 700;
+}
+
+.search-itineraries {
+  margin-bottom: 40px;
+  text-align: center;
+
 }
 
 /* Show Page */
@@ -135,7 +216,8 @@ h4 {
 }
 .show-page-first {
   margin-bottom: 0;
-  padding: 40px 40px 0 40px;
+  padding-top: 40px;
+  text-align: center;
 }
 .show-page-first h3{
   font-size: 40px;
@@ -153,123 +235,32 @@ h4 {
   margin-bottom: 40px;
   border-bottom: 1px solid #000;
   text-align: center;
+  width:100%;
 }
+
+/* itinerary */
 .itinerary {
   background-color: #fff;
   box-shadow: rgba(25, 50, 100, 0.25) 0px 10px 50px;
   border-radius: 4px;
-  position: relative;
   display: inline-block;
   text-align: center;
-  padding: 15px;
+  padding: 60px 30px 0 30px;
   width: 400px;
   height: 400px;
   margin: 20px;
-  vertical-align: middle;
+}
+.itinerary h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
 }
 .itinerary img {
   width: 200px;
   border-radius: 4px;
   margin-top: 10px;
 }
-.my-itineraries .itinerary .buttons {
-  margin-top: 40px;
-}
-.my-itineraries .button {
-  margin-top: 120px;
-}
-
-/* Edit / Profile Page */
-.profile {
-  display: flex;
-  justify-content: center;
-}
-.profile-information {
-  margin: 40px;
-}
-.form-group {
-  margin-top: 20px;
-}
-.profile-image {
-  position: relative;
-  margin-left: 40px;
-  margin-top: 100px;
-  padding-right: 100px;
-  border-right: 0.5px solid #000;
-}
-.profile-image a {
-  position: absolute;
-  left: 23%;
-  padding: 15px;
-}
-.profile-image img{
-  width: 200px;
-}
-.profile-information .form-group input{
-  width: 520px;
-}
-.profile-information .actions {
-  text-align: center;
-}
 
 /* New Itinerary */
-.form{
-  text-align: center;
-  color: #000;
-  padding-top: 80px;
-  padding-bottom: 60px;
-  margin: 120px auto;
-  text-align: center;
-  width: 400px;
-  border-radius: 15px;
-  background-color: #fff;
-}
-.form p {
-  width: 220px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px;
-  font-size: 14px;
-}
-.form h3 {
-  font-size: 24px;
-}
-.form-group input {
-  border: 0.5px solid #0A2239;
-  border-radius: 4px;
-  padding: 15px;
-  width: 260px;
-  margin-top: 10px
-}
-.btn-primary {
-  width: 290px;
-  padding: 15px;
-  border-radius: 4px;
-  background-color: #EC6A5C;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #fff;
-}
-.button {
-  width: 100%;
-  text-align: center;
-  padding: 15px;
-  background-color: #EC6A5C;
-  width:290px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 4px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #fff;
-}
-a.btn-primary {
-  padding: 15px 105px;
-}
-.form a {
-  color: #EC6A5C;
-}
 .new-itinerary {
   text-align: center;
   margin-top: 100px;
@@ -303,119 +294,4 @@ a.btn-primary {
   color: #fff;
 }
 
-/* View Itinerary */
-.view-itinerary {
-  text-align: center;
-  margin-top: 120px;
-}
-
-/* Browse Itineraries */
-
-.browse .search-bar {
-  margin-bottom: 40px;
-}
-.browse {
-  margin-top: 100px;
-  text-align: center;
-  margin-bottom: 120px;
-  margin-left: 40px;
-  margin-right: 40px;
-}
-.show-page-first .itinerary .buttons{
-  text-align: center;
-}
-.itinerary .buttons {
-  width: 400px;
-  text-align: left;
-  margin: 0 5px;
-}
-
-.itinerary .button_to input {
-  width: 80px;
-  border-radius: 5em;
-  margin: 0;
-}
-.itinerary p {
-  margin: 5px;
-}
-.buttons a{
-  font-size: 13px;
-  margin-left: 10px;
-}
-
 /* reviews */
-.reviews {
-  text-align: center;
-  margin-top: 120px;
-}
-
-button-like {
-  border: 2px solid #8a8a8a;
-  background-color: transparent;
-  text-decoration: none;
-  padding: 1rem;
-  position: relative;
-  vertical-align: middle;
-  text-align: center;
-  display: inline-block;
-  border-radius: 3rem;
-  color: #8a8a8a;
-  transition: all ease 0.4s;
-}
-
-.button-like span {
-  margin-left: 0.5rem;
-}
-
-.button-like .fa,
-.button-like span {
-  transition: all ease 0.4s;
-}
-
-.button-like:focus {
-  background-color: transparent;
-}
-
-.button-like:focus .fa,
-.button-like:focus span {
-  color: #8a8a8a;
-}
-
-.button-like:hover {
-  border-color: #cc4b37;
-  background-color: transparent;
-}
-
-.button-like:hover .fa,
-.button-like:hover span {
-  color: #cc4b37;
-}
-
-.liked {
-  background-color: #cc4b37;
-  border-color: #cc4b37;
-}
-
-.liked .fa,
-.liked span {
-  color: #fefefe;
-}
-
-.liked:focus {
-  background-color: #cc4b37;
-}
-
-.liked:focus .fa,
-.liked:focus span {
-  color: #fefefe;
-}
-
-.liked:hover {
-  background-color: #cc4b37;
-  border-color: #cc4b37;
-}
-
-.liked:hover .fa,
-.liked:hover span {
-  color: #fefefe;
-}

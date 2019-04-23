@@ -14,144 +14,98 @@
  *= require_self
  */
 
- /* import font Barlow  */
- @import url('https://fonts.googleapis.com/css?family=Barlow');
 
-body {
-  font-family: 'Barlow', sans-serif;
-  font-size: 16px;
-  color: #000;
-  margin: 0;
-  height: 100vh;
-  background-image: url("chuttersnap-176806-unsplash.jpg");
-  background-size: cover;
-}
-a {
-  text-decoration: none;
-  color: #000;
-}
-header {
-  width: 100%;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  border-bottom: 0.1px solid #101D42;
-  overflow: hidden;
-  display: fixed;
-  background-color: #fff;
-}
-nav {
-  float: right;
-  vertical-align: middle;
-  margin-top: 3px;
-}
-nav a {
-  margin-right: 20px;
-  vertical-align: bottom;
-}
-nav a:active {
-  border-bottom: 0.5px solid #EC6A5C;
-}
-.logo {
-  float: left;
-  font-size: 24px;
-  font-weight: 700;
-  padding-left: 20px;
-}
-.user-homepage-nav {
-  text-align: center;
-  margin-top: 120px;
-  font-weight: 700;
-  font-size: 60px;
-  color: #fff;
-}
-footer {
-  font-size: 12px;
-  position: absolute;
-  background-color: #fff;
-  text-align: center;
-  padding: 15px;
-  width: 100%;
-  bottom: 0;
-  border-top: 0.1px solid #101D42;
-}
-/* Login / Signup */
-.form{
-  text-align: center;
-  color: #000;
-  padding-top: 80px;
-  padding-bottom: 60px;
-  margin: 60px auto 20px auto;
-  text-align: center;
-  width: 400px;
-  border-radius: 15px;
-  background-color: #fff;
-}
-.omniauth img {
-  width: 290px;
-}
-#error_explanation p{
-  color: #EC6A5C;
-}
-.form p {
-  width: 220px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px;
-  font-size: 14px;
-}
-.form h3 {
-  font-size: 24px;
-}
-.form-group input {
-  border: 0.5px solid #0A2239;
-  border-radius: 4px;
-  padding: 15px;
-  width: 260px;
-  margin-top: 10px
-}
-.btn-primary {
-  width: 290px;
-  padding: 15px;
-  border-radius: 4px;
-  background-color: #EC6A5C;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #fff;
-}
-.button {
-  width: 100%;
-  text-align: center;
-  padding: 15px;
-  background-color: #EC6A5C;
-  width:290px;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 4px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: #fff;
-}
-a.btn-primary {
-  padding: 15px 105px;
-}
-.form a {
-  color: #EC6A5C;
-}
-.or-container {
-  display: flex;
-  align-content: stretch;
-  flex-direction: row;
-  margin: 15px auto;
-  width: 290px;
-}
-.bar-icon {
-  border-top: 1px solid #bbb;
-  width: 100%;
-  align-self: flex-start;
-  margin-top: 10px;
-}
-.or-p {
-  padding: 0 20px;
+   /* import font Barlow  */
+   @import url('https://fonts.googleapis.com/css?family=Barlow');
 
-}
+  /* reset */
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+  	margin: 0;
+  	padding: 0;
+  	border: 0;
+  	font-size: 100%;
+  	font: inherit;
+  	vertical-align: baseline;
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, menu, nav, section {
+  	display: block;
+  }
+  body {
+  	line-height: 1;
+  }
+  ol, ul {
+  	list-style: none;
+  }
+  blockquote, q {
+  	quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+  	content: '';
+  	content: none;
+  }
+  table {
+  	border-collapse: collapse;
+  	border-spacing: 0;
+  }
+  /* -------------------------------------------------------------------------- */
+
+ body {
+   font-family: 'Barlow', sans-serif;
+   font-size: 16px;
+   color: #000;
+   background-image: url("chuttersnap-176806-unsplash.jpg");
+   background-size: cover;
+ }
+ html, body {
+  min-height: 100%;
+ }
+ header {
+   width: 100%;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   border-bottom: 0.1px solid #101D42;
+   overflow: hidden;
+   background-color: #fff;
+ }
+ nav {
+   float: right;
+   margin-top: 3px;
+ }
+ nav a {
+   margin-right: 20px;
+ }
+ nav a:active {
+   border-bottom: 0.5px solid #EC6A5C;
+ }
+ .logo {
+   float: left;
+   font-size: 24px;
+   font-weight: 700;
+   padding-left: 20px;
+ }
+ footer {
+   font-size: 12px;
+   background-color: #fff;
+   text-align: center;
+   padding: 15px;
+   width: 100%;
+   bottom: 0;
+   border-top: 0.1px solid #101D42;
+   margin-top: 40px;
+   position: absolute;
+ }
