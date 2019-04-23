@@ -66,11 +66,10 @@ $(document).on('turbolinks:load', function main() {
         })
         // Show how many likes per post below
         if(number_of_likes == 1) {
-          $('.likes').text(number_of_likes + " Like")
+          $(`.likes-${data[0].itinerary_id}`).text(number_of_likes + " Like")
         } else {
-          $('.likes').text(number_of_likes + " Likes")
+          $(`.likes-${data[0].itinerary_id}`).text(number_of_likes + " Likes")
         }
-
     })
   })
 })
@@ -95,14 +94,14 @@ function Itinerary(itinerary) {
 Itinerary.prototype.formatIndex = function() {
   let itineraryHtml = `
     <div class="itinerary">
-      <a class="show-link" data-id="${this.id}" href="/itineraries/${this.id}"><h4>${this.title}</h4></a>
+      <h4>${this.title}</h4>
       <img src="<%= asset_path("airplane-img.jpg")%>">
       <p>${this.description} </p>
       <p>Budget: $${this.budget}</p>
       <form id="target" method="post" data-id="${this.id}" action="/itineraries/${this.id}/reviews">
         <input class="submit" type="submit" value=""></input>
       </form>
-      <div class="likes">${this.number_of_likes == 1 ? this.number_of_likes + " Like" : this.number_of_likes + " Likes"}</div>
+      <a class="show-reviews" data-id="${this.id}" href="/itineraries/${this.id}/reviews"><div class="likes-${this.id}">${this.number_of_likes == 1 ? this.number_of_likes + " Like" : this.number_of_likes + " Likes"}</div></a>
     </div>
   `
   return itineraryHtml
