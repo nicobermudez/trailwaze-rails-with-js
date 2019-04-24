@@ -269,10 +269,10 @@ footer {
   margin-top: 10px;
 }
 .social-likes {
-  bottom: 0;
-  left: 0;
+  bottom: 20px;
+  left: 20px;
   position: absolute;
-  transform: translate(100%, -100%);
+  text-align: left;
 }
 .social-likes a {
   font-size: 14px;

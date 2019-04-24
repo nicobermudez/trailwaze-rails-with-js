@@ -84,7 +84,28 @@ $(document).on('turbolinks:load', function main() {
 
   $(document).on('click', '.show-reviews', function(e) {
     e.preventDefault()
+    let itinerary_id = $(this).attr('data-id')
+    fetch(`/itineraries/${itinerary_id}/reviews.json`).then(res => res.json()).then(function(data) {
+      let reviews = data
 
+      function usersReviewed() {
+        let users = []
+        reviews.forEach((review) => {
+          users.push(review.user.first_name)
+        })
+        if(users.length == 1){
+          return `${users[0]} likes this`;
+        }else if(users.length == 2) {
+          return `${users[0]} and ${users.length-1} others like this`;
+        } else {
+          return `${users[0]}, ${users[1]}, and ${users.length-1} others like this`;
+        }
+      }
+
+      if(data.length > 0) {
+        $(`.likes-${itinerary_id}`).text(usersReviewed())
+      }
+    })
   })
 })
 
