@@ -219,8 +219,9 @@ footer {
 .show-page {
   text-align: center;
 }
-.show-page .itinerary .buttons {
-  text-align: left;
+.show-page p {
+  font-size: 14px;
+  margin-bottom: 40px;
 }
 .show-page-first {
   margin-bottom: 0;
@@ -239,7 +240,7 @@ footer {
   padding: 15px 60px;
 }
 .my-itineraries {
-  padding-bottom: 40px;
+  padding-bottom: 80px;
   margin-bottom: 40px;
   border-bottom: 1px solid #000;
   text-align: center;
@@ -315,5 +316,3 @@ footer {
   border-radius: 4px;
   color: #fff;
 }
-
-/* reviews */
