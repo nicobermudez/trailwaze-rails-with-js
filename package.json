@@ -1,5 +1,6 @@
 {
   "name": "trailwaze-rails-project",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "license": "mit"
 }
