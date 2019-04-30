@@ -6,6 +6,7 @@ $(document).on('turbolinks:load', function main() {
       // Remove featured itineraries
       $('.featured').html("")
       $('.search-itineraries').html("")
+      $('.sort-button').html("Sort A-Z")
 
       data.forEach((itinerary) => {
         let newItinerary = new Itinerary(itinerary)
@@ -15,7 +16,37 @@ $(document).on('turbolinks:load', function main() {
     })
   })
 
-  let mapKeys = ""
+  $('.sort-button').on('click', function(event) {
+    event.preventDefault()
+    fetch(`/itineraries.json`)
+    .then(res => res.json())
+    .then(data => {
+      $('.featured').html("")
+      $('.search-itineraries').html("")
+
+      let sorted_data = [];
+
+      data.sort(function(a,b) {
+        let itineraryA = a.title.toUpperCase();
+        let itineraryB = b.title.toUpperCase();
+        if (itineraryA < itineraryB) {
+          return -1;
+        }
+        if (itineraryA > itineraryB) {
+          return 1;
+        }
+        return 0;
+      })
+
+      data.forEach(itinerary => {
+        let newItinerary = new Itinerary(itinerary)
+        let itineraryHtml = newItinerary.formatIndex()
+        $('.search-itineraries').append(itineraryHtml)
+      })
+    })
+  })
+
+  let mapKeys = "";
 
   $('.search-input').on('keydown', function(e) {
 
@@ -33,6 +64,7 @@ $(document).on('turbolinks:load', function main() {
       // Remove featured itineraries
       $('.featured').html("")
       $('.search-itineraries').html("")
+      $('.sort-button').html("Sort A-Z")
 
       // search through itineraries
       let filter = []
@@ -56,6 +88,24 @@ $(document).on('turbolinks:load', function main() {
       })
     })
   })
+
+  $(document).on('click', '.show-itinerary-button', function(e) {
+    e.preventDefault()
+    const id = parseInt(e.target.id)
+
+    fetch(`/itineraries.json`).then(res => res.json()).then(function(data) {
+      const itinerary = data.find(itinerary => itinerary.id === id);
+      const select = '#show-itinerary-' + id;
+      const itineraryHtml = new Itinerary(itinerary).formatShow()
+      if($(select).html() === "") {
+        $(select).append(itineraryHtml)
+      } else {
+        $(select).html("")
+      }
+    })
+
+  })
+
 
   // Hijack submit button and post method on "Like" for each itinerary
   $(document).on('click', "#target", function(e) {
@@ -116,6 +166,7 @@ function Itinerary(itinerary) {
   this.budget = itinerary.budget
   this.departing_city = itinerary.departing_city
   this.departing_country = itinerary.departing_country
+  this.user = itinerary.user
   this.reviews = itinerary.reviews
   this.number_of_likes = 0;
 
@@ -128,12 +179,10 @@ function Itinerary(itinerary) {
 
 Itinerary.prototype.formatIndex = function() {
   let itineraryHtml = `
-    <div class="itinerary">
-      <h4>${this.title}</h4>
+    <div class="itinerary" id="itinerary-${this.id}">
+      <a class="show-itinerary-button" id="${this.id} "href=""><h4 id="${this.id}">${this.title}</h4></a>
       <img src="<%= asset_path("airplane-img.jpg")%>">
-      <p>${this.description} </p>
-      <p>Budget: $${this.budget}</p>
-
+      <div id="show-itinerary-${this.id}"></div>
       <div class="social-likes">
         <form id="target" method="post" data-id="${this.id}" action="/itineraries/${this.id}/reviews">
           <input type="image" src="<%= asset_path("iconmonstr-favorite-4-240.png")%>" alt="Submit" width="24" height="24"></input>
@@ -144,4 +193,13 @@ Itinerary.prototype.formatIndex = function() {
     </div>
   `
   return itineraryHtml
+}
+
+Itinerary.prototype.formatShow = function() {
+  let itineraryShow = `
+  <p>${this.description} </p>
+  <p>Budget: $${this.budget}</p>
+  <p>Created by: ${this.user.first_name}</p>
+  `
+  return itineraryShow
 }
