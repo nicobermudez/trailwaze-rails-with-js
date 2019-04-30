@@ -321,6 +321,16 @@ footer {
 .sort-button {
 	margin-top: 20px;
 }
+.show-itinerary-button {
+	background-color: #EC6A5C;
+	color: #fff;
+	border-radius: 4px;
+	padding: 5px 15px;
+	margin: 10px;
+}
+.show-itinerary p {
+	margin: 10px;
+}
 
 @media (max-width: 1500px) {
 	.search-itineraries {

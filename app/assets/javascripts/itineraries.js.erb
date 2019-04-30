@@ -96,11 +96,16 @@ $(document).on('turbolinks:load', function main() {
     fetch(`/itineraries.json`).then(res => res.json()).then(function(data) {
       const itinerary = data.find(itinerary => itinerary.id === id);
       const select = '#show-itinerary-' + id;
+      const buttonSelect = select + " a";
       const itineraryHtml = new Itinerary(itinerary).formatShow()
-      if($(select).html() === "") {
-        $(select).append(itineraryHtml)
+
+      // If not already shown, show more, else show less
+      if($(buttonSelect).html() === "Show More") {
+        $(select).prepend(itineraryHtml)
+        $(buttonSelect).html("Show Less")
       } else {
-        $(select).html("")
+        $(select + " p").html("")
+        $(buttonSelect).html("Show More")
       }
     })
 
@@ -180,9 +185,11 @@ function Itinerary(itinerary) {
 Itinerary.prototype.formatIndex = function() {
   let itineraryHtml = `
     <div class="itinerary" id="itinerary-${this.id}">
-      <a class="show-itinerary-button" id="${this.id} "href=""><h4 id="${this.id}">${this.title}</h4></a>
+      <h4 id="${this.id}">${this.title}</h4>
       <img src="<%= asset_path("airplane-img.jpg")%>">
-      <div id="show-itinerary-${this.id}"></div>
+      <div class="show-itinerary" id="show-itinerary-${this.id}">
+        <a class="show-itinerary-button" id="${this.id}" href="">Show More</a>
+      </div>
       <div class="social-likes">
         <form id="target" method="post" data-id="${this.id}" action="/itineraries/${this.id}/reviews">
           <input type="image" src="<%= asset_path("iconmonstr-favorite-4-240.png")%>" alt="Submit" width="24" height="24"></input>
